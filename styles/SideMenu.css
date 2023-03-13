@@ -1,0 +1,22 @@
+/*
+    Component: Side Menu
+    Author: Tudor
+    Type: Style
+*/
+
+
+*
+{
+    /* Reset the settings of the unordered list. */
+
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.ul
+{
+    font-size: 10px;
+}

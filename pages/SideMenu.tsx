@@ -1,6 +1,7 @@
 /*
     Component: Side Menu
     Author: Tudor
+    Type: Structure
 */
 
 
@@ -10,11 +11,29 @@ export default function SideMenu ()
 
         <div>
 
-            <a href = "#">Home</a>
-            <a href = "#">New Appointment</a>
-            <a href = "#">Appointments</a>
-            <a href = "#">Analyses</a>
-            <a href = "#">Settings</a>
+            <ul>
+
+                <li>
+                    <a href = "#">Home</a>
+                </li>
+
+                <li>
+                    <a href = "#">New Appointment</a>
+                </li>
+
+                <li>
+                    <a href = "#">Appointments</a>
+                </li>
+
+                <li>
+                    <a href = "#">Analyses</a>
+                </li>
+
+                <li>
+                    <a href = "#">Settings</a>
+                </li>
+
+            </ul>
 
         </div>
 
