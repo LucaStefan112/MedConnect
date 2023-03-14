@@ -4,34 +4,34 @@
     Type: Structure
 */
 
-// import './SideMenu.css';
+import styles from './SideMenu.module.css';
 
 
 export default function SideMenu ()
 {
     return (
 
-        <div>
+        <div className = {styles.side_menu}>
 
-            <ul>
+            <ul className = {styles.unordered_list}>
 
-                <li>
+                <li className = {styles.list_item}>
                     <a href = "#">Home</a>
                 </li>
 
-                <li>
+                <li className = {styles.list_item}>
                     <a href = "#">New Appointment</a>
                 </li>
 
-                <li>
+                <li className = {styles.list_item}>
                     <a href = "#">Appointments</a>
                 </li>
 
-                <li>
+                <li className = {styles.list_item}>
                     <a href = "#">Analyses</a>
                 </li>
 
-                <li>
+                <li className = {styles.list_item}>
                     <a href = "#">Settings</a>
                 </li>
 

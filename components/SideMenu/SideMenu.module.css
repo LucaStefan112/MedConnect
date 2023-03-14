@@ -5,7 +5,7 @@
 */
 
 
-*
+.side_menu
 {
     /* Reset the settings of the unordered list. */
 
@@ -16,7 +16,13 @@
 }
 
 
-.ul
+.unordered_list
+{
+    font-size: 10px;
+}
+
+
+.list_item
 {
     font-size: 10px;
 }
