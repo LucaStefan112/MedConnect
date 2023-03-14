@@ -4,6 +4,8 @@
     Type: Structure
 */
 
+// import './SideMenu.css';
+
 
 export default function SideMenu ()
 {
