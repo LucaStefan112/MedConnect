@@ -1,2 +1,0 @@
-The components folder contains reusable UI components 
-that can be used across different pages. 
