@@ -1,43 +1,15 @@
-/*
-    Component: Side Menu
-    Author: Tudor
-    Type: Structure
-*/
+import { Routes } from '@/utils/Routes'
+import React from 'react'
+import SideMenuButton from './SideMenuButton'
 
-import styles from './SideMenu.module.css';
+export default function SideMenu() {
 
-
-export default function SideMenu ()
-{
-    return (
-
-        <div className = {styles.side_menu}>
-
-            <ul className = {styles.unordered_list}>
-
-                <li className = {styles.list_item}>
-                    <a href = "#">Home</a>
-                </li>
-
-                <li className = {styles.list_item}>
-                    <a href = "#">New Appointment</a>
-                </li>
-
-                <li className = {styles.list_item}>
-                    <a href = "#">Appointments</a>
-                </li>
-
-                <li className = {styles.list_item}>
-                    <a href = "#">Analyses</a>
-                </li>
-
-                <li className = {styles.list_item}>
-                    <a href = "#">Settings</a>
-                </li>
-
-            </ul>
-
-        </div>
-
-    )
+  return (
+    <div className="flex flex-col w-36 h-10 bg-gray-800">
+      <SideMenuButton path={Routes.HOME} name='Home' />
+      <SideMenuButton path={Routes.USER} name='My account' />
+      <SideMenuButton path={Routes.APPOINTMENTS} name='Appointments' />
+      <SideMenuButton path={Routes.ANALYSES} name='Analyses' />
+    </div>
+  )
 }
