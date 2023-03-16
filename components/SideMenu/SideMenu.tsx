@@ -8,7 +8,11 @@ export default function SideMenu ()
 {
   return (
 
-    <div className = 'flex flex-col w-36 h-screen bg-white'>
+    <div className = {`
+    flex flex-col
+    w-36 h-screen
+    bg-white`
+    }>
 
       <SideMenuButton path = {Routes.HOME} name = 'Home' />
       <SideMenuButton path = {Routes.USER} name = 'My Account' />

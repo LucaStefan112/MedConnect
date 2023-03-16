@@ -12,9 +12,9 @@ export default function SideMenuButton ({path, name} : {path: string, name: stri
   return (
 
     <div className = {`
-      flex flex-col
+      flex flex-col justify-center
       w-100 h-1/4 
-      text-white text-center align-bottom text-side_menu_font_size
+      text-white text-center text-side_menu_font_size
       ${ path === Routes.HOME ? 'rounded-t-xl' : ''}
       ${ path === Routes.ANALYSES ? 'rounded-b-xl' : ''}
       ${ pathname === path ? 'bg-side_menu_darker_blue' : 'bg-side_menu_lighter_blue' }`}>
