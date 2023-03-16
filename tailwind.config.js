@@ -6,8 +6,16 @@ module.exports = {
     {
       colors:
       {
-        side_menu_darker_blue: '#3B82F6',
-        side_menu_lighter_blue: '#60A5FA'
+        blue_0: '#eff6ff',
+        blue_1: '#dbeafe',
+        blue_2: '#bfdbfe',
+        blue_3: '#93c5fd',
+        blue_4: '#60a5fa',
+        blue_5: '#3b82f6',
+        blue_6: '#2563eb',
+        blue_7: '#1d4ed8',
+        blue_8: '#1e40af',
+        blue_9: '##1e3a8a',
       },
 
       fontSize:
