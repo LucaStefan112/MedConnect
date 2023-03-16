@@ -1,13 +1,29 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import React from 'react'
+import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { Routes } from '@/utils/Routes';
 
-export default function SideMenuButton({path, name} : {path: string, name: string}) {
 
-  const { pathname } = useRouter();
+
+export default function SideMenuButton ({path, name} : {path: string, name: string})
+{
+  const { pathname } = useRouter ();
+
   return (
-      <div className={`flex flex-col w-100 ${ pathname === path ? 'bg-blue-400' : 'bg-blue-700' }`}>
-        <Link href={path}>{name}</Link>
-      </div>
+
+    <div className = {`
+      flex flex-col
+      w-100 h-1/4 
+      text-white text-center align-bottom text-side_menu_font_size
+      ${ path === Routes.HOME ? 'rounded-t-xl' : ''}
+      ${ path === Routes.ANALYSES ? 'rounded-b-xl' : ''}
+      ${ pathname === path ? 'bg-side_menu_darker_blue' : 'bg-side_menu_lighter_blue' }`}>
+
+      <Link href = {path}>
+        {name}
+      </Link>
+
+    </div>
+  
   )
 }
