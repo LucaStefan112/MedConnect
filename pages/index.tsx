@@ -3,8 +3,6 @@ import SideMenu from '../components/SideMenu/SideMenu'
 
 export default function Home() {
   return (
-    <React.Fragment>
-      <SideMenu />
-    </React.Fragment>
+    <div>home</div>
   )
 }
