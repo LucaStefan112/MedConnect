@@ -9,4 +9,7 @@ export class Routes {
   public static readonly ANALYSES = '/analyses';
   public static readonly ANALYSIS = '/analysis/:id';
   public static readonly USER = '/user/:id';
+
+  public static readonly SIGNUP = '/signup';
+  public static readonly SIGNIN = '/signin';
 }
