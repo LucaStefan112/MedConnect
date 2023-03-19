@@ -12,6 +12,7 @@ export default function Home()
 
       <Header />
       <SideMenu />
+      <div>home</div>
 
     </React.Fragment>
 

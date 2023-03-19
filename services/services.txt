@@ -1,3 +1,0 @@
-The services folder contains the service files that 
-interact with the backend API or perform other tasks, 
-such as logging.
