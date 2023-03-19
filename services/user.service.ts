@@ -1,21 +1,30 @@
 import axios from "axios";
-import { IGetUserResponse } from "./interfaces";
+import { IGetAppointmentResponse, IGetUserResponse } from "./response.interfaces";
 import { ServerRoutes } from "@/utils/ServerRoutes";
+import { ISpecialisation } from "./app.service";
+import { IDoctor } from "./doctor.service";
 
 export interface IUser {
-  id: string;
+  id: number;
   name: string;
   email: string;
 }
 
+export interface IAppointment {
+  id: number;
+  date: Date;
+  specialisation?: ISpecialisation;
+  doctor: IDoctor;
+}
+
 export default class UserService {
-  public static async getUser(id: string): Promise<IGetUserResponse> {
+  public static async addApppointment(appointment: IAppointment): Promise<IGetAppointmentResponse> {
     try {
-      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_USER);
+      const res = await axios.post(process.env.SERVER + ServerRoutes.ADD_APPOINTMENT, appointment);
       return res.data;
     } catch (err) {
       console.log(err);
-      return { success: false, message: "Error getting user" };
+      return { success: false, message: "Error setting appointment" };
     }
   }
 }

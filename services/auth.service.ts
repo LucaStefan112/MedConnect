@@ -1,6 +1,6 @@
 import { ServerRoutes } from "@/utils/ServerRoutes";
 import axios from "axios";
-import { IBasicResponse } from "./interfaces";
+import { IBasicResponse } from "./response.interfaces";
 
 export default class AuthService {
   public static async checkAuth(token: string): Promise<IBasicResponse> {

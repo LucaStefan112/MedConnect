@@ -3,7 +3,7 @@ import { Routes } from '@/utils/Routes';
 import React, { useEffect } from 'react'
 import { Dna } from 'react-loader-spinner'
 import { useRouter } from 'next/navigation'
-import { IBasicResponse } from '@/services/interfaces';
+import { IBasicResponse } from '@/services/response.interfaces';
 
 export async function getServerSideProps({ params }: { params: { token: string } }) {
   return {
