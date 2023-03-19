@@ -1,14 +1,17 @@
 import AppService, { ISpecialisation } from '@/services/app.service';
 import DoctorService, { IDoctor } from '@/services/doctor.service';
 import { IGetDoctorAvailableDaysResponse, IGetDoctorAvailableHoursResponse, IGetDoctorsResponse, IGetSpecialisationsResponse } from '@/services/response.interfaces';
-import { IAppointment } from '@/services/user.service';
+import UserService, { IAppointment } from '@/services/user.service';
+import { Routes } from '@/utils/Routes';
 import { Button, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import { addDays, setHours, setMinutes } from 'date-fns';
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function Scheduler() {
+  const router = useRouter();
   const [appointment, setAppointment] = useState<IAppointment>({} as IAppointment);
   const [specialisations, setSpecialisations] = useState<ISpecialisation[]>([
     {id: 0, name: 'Specialisation 0'},
@@ -43,13 +46,24 @@ export default function Scheduler() {
   //   });
   // }, []);
 
-  return (
-    <form className='
-      flex flex-col items-center justify-center
-      w-full h-auto
-    '>
+  const scheduleAppointment = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const response = await UserService.addApppointment(appointment);
+    
+    if(response.success) {
+      alert('Appointment scheduled!');
+      router.push(Routes.APPOINTMENTS);
+    } else {
+      alert('Something went wrong!');
+    }
+  }
 
-      <FormControl variant='standard' className='w-60'>
+  return (
+    <form className='flex flex-col items-center justify-center w-full h-auto'
+      onSubmit={(e: React.FormEvent<HTMLFormElement>) => scheduleAppointment(e)} 
+    >
+
+      <FormControl variant='standard' className='w-60' >
         <InputLabel>Specialisation</InputLabel>
           <Select
             defaultValue=''

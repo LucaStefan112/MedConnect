@@ -4,7 +4,7 @@ import { IDoctor } from "@/services/doctor.service";
 export class ServerRoutes {
   public static CHECK_AUTH = (token: string) => `/check-auth/${token}`;
   public static GET_SPECIALISATIONS = '/specialisations';
-  public static SET_APPOINTMENT = '/appointment';
+  public static ADD_APPOINTMENT = '/appointment';
   public static GET_DOCTORS_BY_SPECIALISATION = (specialisation: ISpecialisation) =>
     `/doctors/specialisation/${specialisation.id}`;
   public static GET_DOCTOR_AVAILABLE_DAYS = (doctor: IDoctor) => `/doctor/${doctor.id}/available-days`;

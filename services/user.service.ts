@@ -18,9 +18,9 @@ export interface IAppointment {
 }
 
 export default class UserService {
-  public static async setAppointment(appointment: IAppointment): Promise<IGetAppointmentResponse> {
+  public static async addApppointment(appointment: IAppointment): Promise<IGetAppointmentResponse> {
     try {
-      const res = await axios.post(process.env.SERVER + ServerRoutes.SET_APPOINTMENT, appointment);
+      const res = await axios.post(process.env.SERVER + ServerRoutes.ADD_APPOINTMENT, appointment);
       return res.data;
     } catch (err) {
       console.log(err);
