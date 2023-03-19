@@ -13,8 +13,8 @@ export default function SideMenu () {
   return (
     <div className='
       flex flex-col justify-between 
-      w-32 h-screen ml-2
-      bg-blue_4
+      w-32 h-screen ml-4
+      bg-blue-400
       rounded-xl'
     >
       {

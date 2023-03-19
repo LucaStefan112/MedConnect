@@ -10,10 +10,7 @@ export default function Home() {
         text-decoration-none
         no-underline'
       >
-          <Button className='
-          bg-blue-500 
-          text-white text-l
-          h-16'>
+          <Button className='main_button'>
           NEW APPOINTMENT
         </Button>
       </Link>

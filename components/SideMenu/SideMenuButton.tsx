@@ -11,7 +11,7 @@ export default function SideMenuButton ({path, name} : {path: string, name: stri
       w-full h-1/4
       text-white text-center text-side_menu_font_size
       rounded-xl
-      ${ pathname === path ? 'bg-blue_5' : 'bg-blue_4'}`}
+      ${ pathname === path ? 'bg-blue-500' : 'bg-blue-400'}`}
     >
       <Link href={ path } className='
         flex flex-col justify-center
