@@ -10,5 +10,6 @@ export enum Routes {
   ANALYSIS = '/analysis/:id',
   MY_ACCOUNT = '/my-account',
   SIGNUP = '/signup',
-  SIGNIN = '/signin'
+  SIGNIN = '/signin',
+  LOGOUT = '/logout'
 }
