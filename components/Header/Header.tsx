@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes } from '@/utils/Routes';
-import SignInUpButton from './SignInUpButton';
+import SignInUpLogOutButton from './SignInUpLogOutButton';
 import Images from './../../utils/Images';
 import Image from 'next/image';
 
@@ -16,8 +16,8 @@ export default function Header ()
 
         <section className = 'flex justify-evenly items-center w-80'>
 
-          <SignInUpButton path = {Routes.SIGNUP} name = 'SIGN UP' />
-          <SignInUpButton path = {Routes.SIGNIN} name = 'SIGN IN' />
+          <SignInUpLogOutButton path = {Routes.SIGNUP} name = 'SIGN UP' />
+          <SignInUpLogOutButton path = {Routes.SIGNIN} name = 'SIGN IN' />
 
         </section>
 

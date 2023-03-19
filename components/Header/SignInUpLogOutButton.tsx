@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 
 
-export default function SignInUpButton ({path, name} : {path: string, name: string})
+export default function SignInUpLogOutButton ({path, name} : {path: string, name: string})
 {
   const { pathname } = useRouter ();
 
