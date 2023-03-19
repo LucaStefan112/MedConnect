@@ -8,5 +8,8 @@ export enum Routes {
   APPOINTMENT = '/appointment/:id',
   ANALYSES = '/analyses',
   ANALYSIS = '/analysis/:id',
-  MY_ACCOUNT = '/my-account'
+  MY_ACCOUNT = '/my-account',
+  SIGNUP = '/signup',
+  SIGNIN = '/signin',
+  LOGOUT = '/logout'
 }
