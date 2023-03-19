@@ -10,7 +10,7 @@ export default function SignInUpButton ({path, name} : {path: string, name: stri
 
   return (
 
-    <button className = 'text-white bg-blue_5 h-11'>
+    <button className = 'rounded-lg w-28 text-white bg-blue_5 h-11 text-lg'>
 
       <Link href = {path}>
         {name}
