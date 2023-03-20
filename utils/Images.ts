@@ -1,10 +1,7 @@
-import application_logo from 'assets/images/application_logo.png';
-import user_profile_picture from 'assets/images/user_profile_picture.png'
+import applicationLogo from 'assets/images/application_logo.png';
+import homeImage from 'assets/images/home_image.svg';
 
-
-
-export default class images
-{
-    public static APPLICATION_LOGO = application_logo;
-    public static USER_PROFILE_PICTURE = user_profile_picture;
+export default class Images {
+    public static APPLICATION_LOGO = applicationLogo;
+    public static HOME_IMAGE = homeImage;
 }

@@ -1,6 +1,6 @@
 import { ISpecialisation } from "./app.service";
 import { IDoctor } from "./doctor.service";
-import { IAppointment, IUser } from "./user.service";
+import { IAppointment, IUser, IUserNews } from "./user.service";
 
 export interface IBasicResponse {
   success: boolean;
@@ -19,6 +19,10 @@ export interface IGetAppointmentResponse extends IBasicResponse {
   appointment?: IAppointment;
 }
 
+export interface IGetAppointmentsResponse extends IBasicResponse {
+  appointments?: IAppointment[];
+}
+
 export interface IGetDoctorsResponse extends IBasicResponse {
   doctors?: IDoctor[];
 }
@@ -29,4 +33,8 @@ export interface IGetDoctorAvailableDaysResponse extends IBasicResponse {
 
 export interface IGetDoctorAvailableHoursResponse extends IBasicResponse {
   availableHours?: Date[];
+}
+
+export interface IGetUserNewsResponse extends IBasicResponse {
+  news?: IUserNews[];
 }
