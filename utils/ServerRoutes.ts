@@ -11,4 +11,5 @@ export class ServerRoutes {
   public static GET_DOCTOR_AVAILABLE_DAYS = (doctor: IDoctor) => `/doctor/${doctor.id}/available-days`;
   public static GET_DOCTOR_AVAILABLE_HOURS = (doctor: IDoctor, date: Date) => 
     `/doctor/${doctor.id}/available-hours/${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+  public static GET_NEWS = '/news';
 }
