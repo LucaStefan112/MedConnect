@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const { pathname }: { pathname: string } = useRouter();
 
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col overflow-x-hidden'>
       { !pathname.includes('auth-redirect') && <Header />}
       <div className='flex flex-row'>
         { !pathname.includes('auth-redirect') && <SideMenu /> }

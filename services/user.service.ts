@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IGetAppointmentResponse, IGetUserResponse } from "./response.interfaces";
+import { IGetAppointmentResponse, IGetAppointmentsResponse, IGetUserResponse } from "./response.interfaces";
 import { ServerRoutes } from "@/utils/ServerRoutes";
 import { ISpecialisation } from "./app.service";
 import { IDoctor } from "./doctor.service";
@@ -26,6 +26,16 @@ export default class UserService {
     } catch (err) {
       console.log(err);
       return { success: false, message: "Error setting appointment" };
+    }
+  }
+
+  public static async getAppointments(): Promise<IGetAppointmentsResponse> {
+    try {
+      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_APPOINTMENTS);
+      return res.data;
+    } catch (err) {
+      console.log(err);
+      return { success: false, message: "Error getting appointments" };
     }
   }
 }

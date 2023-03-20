@@ -19,6 +19,10 @@ export interface IGetAppointmentResponse extends IBasicResponse {
   appointment?: IAppointment;
 }
 
+export interface IGetAppointmentsResponse extends IBasicResponse {
+  appointments?: IAppointment[];
+}
+
 export interface IGetDoctorsResponse extends IBasicResponse {
   doctors?: IDoctor[];
 }
