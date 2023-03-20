@@ -1,3 +1,4 @@
+import Header from '@/components/Header/Header';
 import SideMenu from '@/components/SideMenu/SideMenu'
 import '@/styles/globals.scss'
 import type { AppProps } from 'next/app'
@@ -7,9 +8,12 @@ export default function App({ Component, pageProps }: AppProps) {
   const { pathname }: { pathname: string } = useRouter();
 
   return (
-    <div className='page'>
-      { !pathname.includes('auth-redirect') && <SideMenu /> }
-      <Component {...pageProps} />
+    <div className='flex flex-col'>
+      { !pathname.includes('auth-redirect') && <Header />}
+      <div className='flex flex-row'>
+        { !pathname.includes('auth-redirect') && <SideMenu /> }
+        <Component {...pageProps} />
+      </div>
     </div>
   )
 }

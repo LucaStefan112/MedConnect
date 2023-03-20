@@ -2,11 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.page {
-  display: flex;
-  flex-direction: row;
-}
-
 .main_button {
-  @apply bg-blue-500 h-full hover:bg-blue-600 text-white h-16 ml-4;
+  @apply bg-blue-500 hover:bg-blue-600 text-white;
 }

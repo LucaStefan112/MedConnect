@@ -15,7 +15,7 @@ export default function SearchBar({ className }: { className?: string }) {
         w-full h-full
         bg-blue-50
         outline-none
-        text-blue-900'
+        text-blue-900 text-lg'
         placeholder='Search appointment'
       />
       <SearchIcon

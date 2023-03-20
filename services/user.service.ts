@@ -11,10 +11,11 @@ export interface IUser {
 }
 
 export interface IAppointment {
-  id: number;
+  id?: number;
   date: Date;
   specialisation?: ISpecialisation;
   doctor: IDoctor;
+  type?: string;
 }
 
 export default class UserService {
