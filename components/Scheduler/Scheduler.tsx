@@ -2,7 +2,7 @@ import AppService, { ISpecialisation } from '@/services/app.service';
 import DoctorService, { IDoctor } from '@/services/doctor.service';
 import { IGetDoctorAvailableDaysResponse, IGetDoctorAvailableHoursResponse, IGetDoctorsResponse, IGetSpecialisationsResponse } from '@/services/response.interfaces';
 import UserService, { IAppointment } from '@/services/user.service';
-import { Routes } from '@/utils/Routes';
+import Routes from '@/utils/Routes';
 import { Button, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import { addDays, setHours, setMinutes } from 'date-fns';
 import { useRouter } from 'next/router';
@@ -62,7 +62,6 @@ export default function Scheduler() {
     <form className='flex flex-col items-center justify-center w-full h-auto'
       onSubmit={(e: React.FormEvent<HTMLFormElement>) => scheduleAppointment(e)} 
     >
-
       <FormControl variant='standard' className='w-60' >
         <InputLabel>Specialisation</InputLabel>
           <Select

@@ -23,3 +23,11 @@
 .appointments_list_max_height::-webkit-scrollbar {
   display: none;
 }
+
+.user_form_column {
+  @apply flex flex-col bg-blue-100 w-80 p-4 rounded-lg;
+
+  .input_field {
+    @apply mb-4 h-12 rounded-lg;
+  }
+}
