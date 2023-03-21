@@ -8,8 +8,8 @@ export default function MyAccountBody ()
 
     <div>
 
-        Body
-
+      Body
+    
     </div>
 
   )

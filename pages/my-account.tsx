@@ -8,10 +8,14 @@ export default function Profile ()
 {
   return (
 
-    <div className = 'w-full ml-20 mr-20'>
+    <div className = 'main_page'>
 
-      <MyAccountHeader />
-      <MyAccountBody />
+      <div className = 'w-full ml-20 mr-20'>
+
+        <MyAccountHeader />
+        <MyAccountBody />
+
+      </div>
 
     </div>
 
