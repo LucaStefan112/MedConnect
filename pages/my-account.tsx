@@ -8,7 +8,7 @@ export default function Profile ()
 {
   return (
 
-    <div>
+    <div className = 'w-full ml-20 mr-20'>
 
       <MyAccountHeader />
       <MyAccountBody />
