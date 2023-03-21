@@ -1,5 +1,5 @@
 import React from 'react';
-import MyAccountForm from '@/components/MyAccount/MyAccountForm';
+import MyAccountForm from '@/components/UserForm/UserForm';
 
 
 
@@ -7,12 +7,8 @@ export default function MyAccountBody ()
 {
   return (
 
-    <div className = 'flex flex-row items-center justify-between'>
-
+    <div>
       <MyAccountForm />
-      <MyAccountForm />
-      <MyAccountForm />
-    
     </div>
 
   )
