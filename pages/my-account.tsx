@@ -1,7 +1,19 @@
-import React from 'react'
+import React from 'react';
+import MyAccountHeader from '@/components/MyAccount/MyAccountHeader';
+import MyAccountBody from '@/components/MyAccount/MyAccountBody';
 
-export default function Profile() {
+
+
+export default function Profile ()
+{
   return (
-    <div>profile</div>
+
+    <div>
+
+      <MyAccountHeader />
+      <MyAccountBody />
+
+    </div>
+
   )
 }
