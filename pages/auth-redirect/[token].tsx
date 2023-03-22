@@ -1,5 +1,5 @@
 import AuthService from '@/services/auth.service';
-import { Routes } from '@/utils/Routes';
+import Routes from '@/utils/Routes';
 import React, { useEffect } from 'react'
 import { Dna } from 'react-loader-spinner'
 import { useRouter } from 'next/navigation'

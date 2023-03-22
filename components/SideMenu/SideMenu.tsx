@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes } from '@/utils/Routes';
+import Routes from '@/utils/Routes';
 import SideMenuButton from './SideMenuButton';
 
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';

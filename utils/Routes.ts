@@ -1,15 +1,15 @@
-export enum Routes {
-  AUTH_APP = 'http://localhost:3000',
-  HOME = '/',
+export default class Routes {
+  public static AUTH_APP = 'http://localhost:3000';
+  public static HOME = '/';
   
-  REDIRECT_FROM_AUTH = '/auth-redirect/:token',
-  ADD_APPOINTMENT = '/appointments/add',
-  APPOINTMENTS = '/appointments',
-  APPOINTMENT = '/appointments/:id',
-  ANALYSES = '/analyses',
-  ANALYSIS = '/analysis/:id',
-  MY_ACCOUNT = '/my-account',
-  SIGNUP = '/signup',
-  SIGNIN = '/signin',
-  LOGOUT = '/logout'
+  public static REDIRECT_FROM_AUTH = '/auth-redirect/:token';
+  public static ADD_APPOINTMENT = '/appointments/add';
+  public static APPOINTMENTS = '/appointments';
+  public static APPOINTMENT = (id: any) => `/appointments/${id}`;
+  public static ANALYSES = '/analyses';
+  public static ANALYSIS = '/analyses/:id';
+  public static MY_ACCOUNT = '/my-account';
+  public static SIGNUP = '/signup';
+  public static SIGNIN = '/signin';
+  public static LOGOUT = '/logout';
 }

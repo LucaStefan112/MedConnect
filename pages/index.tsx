@@ -5,7 +5,7 @@ import React from 'react'
 import Image from 'next/image'
 import { Button } from '@mui/material'
 import Link from 'next/link'
-import { Routes } from '@/utils/Routes'
+import Routes from '@/utils/Routes'
 
 export default function Home() {
   return (
