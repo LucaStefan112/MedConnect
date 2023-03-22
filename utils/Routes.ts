@@ -7,7 +7,7 @@ export default class Routes {
   public static APPOINTMENTS = '/appointments';
   public static APPOINTMENT = (id: any) => `/appointments/${id}`;
   public static ANALYSES = '/analyses';
-  public static ANALYSIS = '/analysis/:id';
+  public static ANALYSIS = '/analyses/:id';
   public static MY_ACCOUNT = '/my-account';
   public static SIGNUP = '/signup';
   public static SIGNIN = '/signin';
