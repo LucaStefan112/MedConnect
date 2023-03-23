@@ -15,16 +15,25 @@ export async function getServerSideProps({ params }: { params: { token: string }
 
 export default function AutshRedirect({ token }: { token: string }) {
   const router = useRouter();
+  
+  const data = {
+    email: 'a@ab.com',
+    password: '12345',
+  }
 
-  // useEffect(() => {
-  //   AuthService.checkAuth(token).then((res: IBasicResponse) => {
-  //     if (res.success) {
-  //       router.replace(Routes.HOME);
-  //     } else {
-  //       router.replace(Routes.AUTH_APP);
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    AuthService.login(data).then((res: any) => {
+      console.log(res.token);
+      AuthService.checkAuth(res.token).then((res: IBasicResponse) => {
+        console.log(res);
+        // if (res.success) {
+        //   router.replace(Routes.HOME);
+        // } else {
+        //   router.replace(Routes.AUTH_APP);
+        // }
+      });
+    });
+  }, []);
 
   return (
     <div className='flex flex-col items-center justify-center h-screen w-screen bg-blue-100'>

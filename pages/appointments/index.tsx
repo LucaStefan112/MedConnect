@@ -2,6 +2,7 @@ import SearchBar from '@/components/SearchBar/SearchBar'
 import VerticalList from '@/components/VerticalList/VerticalList'
 import { IGetAppointmentsResponse } from '@/services/response.interfaces';
 import UserService, { IAppointment } from '@/services/user.service';
+import DateTimeParser from '@/utils/DateTimeParser';
 import Routes from '@/utils/Routes';
 import { Button } from '@mui/material'
 import Link from 'next/link';
@@ -12,16 +13,15 @@ export default function Appointments() {
   const router = useRouter();
   
   const [appointments, setAppointments] = useState<any[]>([
-    { id: 1, title: 'Appointment 1', description: 'Description 1', date: '2021-10-10', time: '10:00' },
-    { id: 2, title: 'Appointment 2', description: 'Description 2', date: '2021-10-10', time: '10:00' },
-    { id: 3, title: 'Appointment 3', description: 'Description 3', date: '2021-10-10', time: '10:00' },
-    { id: 4, title: 'Appointment 4', description: 'Description 4', date: '2021-10-10', time: '10:00' },
-    { id: 5, title: 'Appointment 5', description: 'Description 5', date: '2021-10-10', time: '10:00' },
-    { id: 6, title: 'Appointment 6', description: 'Description 6', date: '2021-10-10', time: '10:00' },
-    { id: 7, title: 'Appointment 7', description: 'Description 7', date: '2021-10-10', time: '10:00' },
-    { id: 8, title: 'Appointment 8', description: 'Description 8', date: '2021-10-10', time: '10:00' },
-    { id: 9, title: 'Appointment 9', description: 'Description 9', date: '2021-10-10', time: '10:00' },
-    { id: 10, title: 'Appointment 10', description: 'Description 10', date: '2021-10-10', time: '10:00' }
+    { id: 1, specialisation: { name: 'Specialisation 1' }, doctor: {name: 'Doctor 1'}, date: new Date('2021-10-11') },
+    { id: 2, specialisation: { name: 'Specialisation 2' }, doctor: {name: 'Doctor 2'}, date: new Date('2021-10-12') },
+    { id: 3, specialisation: { name: 'Specialisation 3' }, doctor: {name: 'Doctor 3'}, date: new Date('2021-10-13') },
+    { id: 4, specialisation: { name: 'Specialisation 4' }, doctor: {name: 'Doctor 4'}, date: new Date('2021-10-14') },
+    { id: 5, specialisation: { name: 'Specialisation 5' }, doctor: {name: 'Doctor 5'}, date: new Date('2021-10-15') },
+    { id: 6, specialisation: { name: 'Specialisation 6' }, doctor: {name: 'Doctor 6'}, date: new Date('2021-10-16') },
+    { id: 7, specialisation: { name: 'Specialisation 7' }, doctor: {name: 'Doctor 7'}, date: new Date('2021-10-17') },
+    { id: 8, specialisation: { name: 'Specialisation 8' }, doctor: {name: 'Doctor 8'}, date: new Date('2021-10-18') },
+    { id: 9, specialisation: { name: 'Specialisation 9' }, doctor: {name: 'Doctor 9'}, date: new Date('2021-10-19') },
   ]);
 
   // useEffect(() => {
@@ -37,7 +37,7 @@ export default function Appointments() {
   return (
     <div className='main_page'>
       <div className='flex flex-row items-center justify-between w-full h-14'>
-        <SearchBar />
+        <SearchBar placeholder='Search appointment...' />
         <Link href={ Routes.ADD_APPOINTMENT }>
           <Button className='main_button text-lg h-14'>
             New Appointment
@@ -47,7 +47,19 @@ export default function Appointments() {
       <p className='text-4xl mt-7 mb-7 text-blue-600 w-full'>
         My Appointments
       </p>
-      <VerticalList list={ appointments } className='appointments_list_max_height' />
+      <VerticalList className='appointments_list_max_height'
+        list= {
+          appointments.map((appointment: IAppointment) => {
+            return {
+              title:  appointment.specialisation.name + ' with ' + 
+                      appointment.doctor.name + ' on ' +
+                      DateTimeParser.parseDate(appointment.date) + ' at ' +
+                      DateTimeParser.parseTime(appointment.date),
+              onClick: () => appointment.id && router.push(Routes.APPOINTMENT(appointment.id)),
+            }
+          })
+        }
+      />
     </div>
   )
 }
