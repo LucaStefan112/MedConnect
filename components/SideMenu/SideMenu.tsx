@@ -40,7 +40,9 @@ export default function SideMenu () {
       flex flex-col justify-between 
       w-32 ml-10
       bg-blue-400
-      rounded-xl'
+      rounded-xl
+      max-h-[40em]
+      side_menu_custom'
     >
       {
         links.map(({ path, name, key, icon }) => (

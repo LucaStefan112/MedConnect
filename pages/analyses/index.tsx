@@ -43,14 +43,14 @@ export default function Analyses() {
       <p className='text-4xl mt-7 mb-7 text-blue-600 w-full'>
         My Analyses
       </p>
-      <VerticalList className='analyses_list_max_height'
+      <VerticalList className='max-h-[30.5em] hide_scroll'
         list= {
           analyses.map((analysis: IAnalysis) => {
             return {
               title:  analysis.title + ' at ' + DateTimeParser.parseDate(analysis.date),
               onClick: () => router.push(Routes.ANALYSIS(analysis.id)),
               icons: [
-                <a href='iao.pdf' key={ 0 } download={true}>
+                <a href='641946eda55feb76cc7b08c5_23-03-2023_biochemistry+haematology+microbiology.pdf' key={ 0 } download={true}>
                   <DownloadIcon color='primary' />
                 </a>
               ]
