@@ -8,6 +8,11 @@ import { Button } from '@mui/material'
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
+import Scheduler from '@/components/Scheduler/Scheduler'
+import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "react-datepicker";
+import { addDays, setHours, setMinutes } from 'date-fns';
+
 
 export default function Appointments() {
   const router = useRouter();
@@ -34,6 +39,13 @@ export default function Appointments() {
   //   });
   // }, []);
 
+  const [appointment, setAppointment] = useState<IAppointment>({} as IAppointment);
+  const [availableDays, setAvailableDays] = useState<Date[]>([
+    new Date(),
+    addDays(new Date(), 1),
+    addDays(new Date(), 2)
+  ]);
+
   return (
     <div className='main_page'>
       <div className='flex flex-row items-center justify-between w-full h-14'>
@@ -47,18 +59,25 @@ export default function Appointments() {
       <p className='text-4xl mt-7 mb-7 text-blue-600 w-full'>
         My Appointments
       </p>
-      <VerticalList className='appointments_list_max_height'
-        list= {
-          appointments.map((appointment: IAppointment) => {
-            return {
-              title:  appointment.specialisation.name + ' with ' + 
-                      appointment.doctor.name + ' on ' +
-                      DateTimeParser.parseDate(appointment.date) + ' at ' +
-                      DateTimeParser.parseTime(appointment.date),
-              onClick: () => appointment.id && router.push(Routes.APPOINTMENT(appointment.id)),
-            }
-          })
-        }
+      
+    <DatePicker inline
+        includeDates={ [...availableDays] }
+        onChange={(date: Date) => {
+          router.push(Routes.APPOINTMENTLIST);
+          // setAppointment((appointment: IAppointment) => ({
+          //   ...appointment,
+          //   date: new Date(date)
+            
+          // }));
+
+          // DoctorService.getDoctorAvailableHours(appointment.doctor, date).then((res: IGetDoctorAvailableHoursResponse) => {
+          //   if(res.success && res.availableHours) {
+          //     setAvailableHours(res.availableHours);
+          //   } else {
+          //     setAvailableHours([]);
+          //   }
+          // });
+        }} 
       />
     </div>
   )
