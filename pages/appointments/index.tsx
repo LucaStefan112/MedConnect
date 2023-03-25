@@ -63,10 +63,12 @@ export default function Appointments() {
     <DatePicker inline
         includeDates={ [...availableDays] }
         onChange={(date: Date) => {
-          setAppointment((appointment: IAppointment) => ({
-            ...appointment,
-            date: new Date(date)
-          }));
+          router.push(Routes.APPOINTMENTLIST);
+          // setAppointment((appointment: IAppointment) => ({
+          //   ...appointment,
+          //   date: new Date(date)
+            
+          // }));
 
           // DoctorService.getDoctorAvailableHours(appointment.doctor, date).then((res: IGetDoctorAvailableHoursResponse) => {
           //   if(res.success && res.availableHours) {
