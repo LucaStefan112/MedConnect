@@ -24,8 +24,20 @@ export default function UpcomingAppointments ()
         Upcoming Appointments
       </p>
 
-      <Link href = { Routes.ADD_APPOINTMENT }>
-        <Button className = 'main_button text-lg h-14 m-4'>
+      <Link href = { Routes.APPOINTMENT(3) }>
+        <Button className = 'bg-blue-100 hover:bg-blue-50 text-black pl-5 pr-5 text-lg h-14 m-4'>
+          15.03 (14:00) - Cardiology app.
+        </Button>
+      </Link>
+
+      <Link href = { Routes.APPOINTMENT(4) }>
+        <Button className = 'bg-blue-100 hover:bg-blue-50 text-black pl-5 pr-5 text-lg h-14 m-4'>
+          29.07 (10:30) - Cardiology app.
+        </Button>
+      </Link>
+
+      <Link href = { Routes.APPOINTMENTS }>
+        <Button className = 'bg-blue-100 hover:bg-blue-50 text-black pl-5 pr-5 text-lg h-14 m-4'>
           View All
         </Button>
       </Link>
