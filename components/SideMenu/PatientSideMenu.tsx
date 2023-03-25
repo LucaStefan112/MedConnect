@@ -7,7 +7,7 @@ import AccountBoxOutlinedIcon from '@mui/icons-material/AccountBoxOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import HiveOutlinedIcon from '@mui/icons-material/HiveOutlined';
 
-export default function SideMenu () {
+export default function PatientSideMenu () {
   const links = [
     { 
       key: 0, 
