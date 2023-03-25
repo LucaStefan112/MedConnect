@@ -38,7 +38,7 @@ export default function Appointments() {
     <div className='main_page'>
       <div className='flex flex-row items-center justify-between w-full h-14'>
         <SearchBar placeholder='Search appointment...' />
-        <Link href={ Routes.ADD_APPOINTMENT }>
+        <Link href={ Routes.FILL_FORM }>
           <Button className='main_button text-lg h-14'>
             New Appointment
           </Button>

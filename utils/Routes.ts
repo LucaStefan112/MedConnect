@@ -4,6 +4,7 @@ export default class Routes {
   
   public static REDIRECT_FROM_AUTH = '/auth-redirect/:token';
   public static ADD_APPOINTMENT = '/appointments/add';
+  public static FILL_FORM = '/appointments/fillForm';
   public static APPOINTMENTS = '/appointments';
   public static APPOINTMENT = (id: any) => `/appointments/${id}`;
   public static ANALYSES = '/analyses';

@@ -3,7 +3,9 @@ import React from 'react'
 
 export default function AddAppointment() {
   return (
-    <div className='main_page'>
+    <div className='flex flex-row justify-between w-full'>
+      <Scheduler />
+      <Scheduler />
       <Scheduler />
     </div>
   )
