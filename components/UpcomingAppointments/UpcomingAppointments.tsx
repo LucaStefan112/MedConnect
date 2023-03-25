@@ -37,7 +37,7 @@ export default function UpcomingAppointments ()
             text-black text-lg
               p-4 mt-4
           '>
-            appointment.message
+            {appointment.message}
           </Button>
         ))
       }
