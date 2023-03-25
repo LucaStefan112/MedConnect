@@ -12,4 +12,5 @@ export default class Routes {
   public static SIGNUP = '/signup';
   public static SIGNIN = '/signin';
   public static LOGOUT = '/logout';
+  public static APPOINTMENTLIST= '/appointmentsList';
 }
