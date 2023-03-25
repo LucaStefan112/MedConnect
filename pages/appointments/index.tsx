@@ -47,7 +47,7 @@ export default function Appointments() {
       <p className='text-4xl mt-7 mb-7 text-blue-600 w-full'>
         My Appointments
       </p>
-      <VerticalList className='appointments_list_max_height'
+      <VerticalList className='max-h-[30.5rem] hide_scroll'
         list= {
           appointments.map((appointment: IAppointment) => {
             return {

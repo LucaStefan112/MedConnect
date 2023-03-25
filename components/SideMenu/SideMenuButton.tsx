@@ -8,9 +8,9 @@ export default function SideMenuButton ({ path, name, icon } : { path: string, n
 
   return (
     <div className={`
+      text-white text-center text-side_menu_font_size
       flex flex-col justify-between
       w-full h-40
-      text-white text-center text-side_menu_font_size
       rounded-xl
       ${ pathname === Routes.HOME && path === Routes.HOME || pathname.includes(path) && path !== Routes.HOME ? 
       'bg-blue-500' : 'bg-blue-400'}`}
