@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IGetAppointmentResponse, IGetAppointmentsResponse, IGetUserNewsResponse, IGetUserResponse } from "./response.interfaces";
+import { IGetAnalysesResponse, IGetAppointmentResponse, IGetAppointmentsResponse, IGetUserNewsResponse, IGetUserResponse, IGetUsersResponse } from "./response.interfaces";
 import { ServerRoutes } from "@/utils/ServerRoutes";
 import { ISpecialisation } from "./app.service";
 import { IDoctor } from "./doctor.service";
@@ -13,9 +13,17 @@ export interface IUser {
 export interface IAppointment {
   id?: number;
   date: Date;
-  specialisation?: ISpecialisation;
+  specialisation: ISpecialisation;
   doctor: IDoctor;
   type?: string;
+}
+
+export interface IAnalysis {
+  id: string;
+  title: string;
+  description: string;
+  type: string;
+  date: Date;
 }
 
 export interface IUserNews {
@@ -46,6 +54,16 @@ export default class UserService {
     }
   }
 
+  public static async getAppointment(id: string): Promise<IGetAppointmentResponse> {
+    try {
+      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_APPOINTMENT(id));
+      return res.data;
+    } catch (err) {
+      console.log(err);
+      return { success: false, message: "Error getting appointment" };
+    }
+  }
+
   public static async getNews(): Promise<IGetUserNewsResponse> {
     try {
       const res = await axios.get(process.env.SERVER + ServerRoutes.GET_NEWS);
@@ -55,4 +73,25 @@ export default class UserService {
       return { success: false, message: "Error getting news" };
     }
   }
+
+  public static async getUsers(): Promise<IGetUsersResponse> {
+    try {
+      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_USERS);
+      return res.data;
+    } catch (err) {
+      console.log(err);
+      return { success: false, message: "Error getting users" };
+    }
+  }
+
+  public static async getAnalyses(): Promise<IGetAnalysesResponse> {
+    try {
+      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_ANALYSES);
+      return res.data;
+    } catch (err) {
+      console.log(err);
+      return { success: false, message: "Error getting analyses" };
+    }
+  }
+
 }
