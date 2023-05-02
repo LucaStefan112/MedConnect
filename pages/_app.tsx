@@ -1,3 +1,4 @@
+import Header from '@/components/Header/Header';
 import SideMenu from '@/components/SideMenu/SideMenu'
 import '@/styles/globals.scss'
 import type { AppProps } from 'next/app'
@@ -28,11 +29,12 @@ const theme = createTheme({
 });
 
   return (
-    <ThemeProvider theme={theme}>
-    <div className='page'>
-      { !pathname.includes('auth-redirect') && <SideMenu /> }
-      <Component {...pageProps} />
+    <div className='flex flex-col overflow-x-hidden'>
+      { !pathname.includes('auth-redirect') && <Header />}
+      <div className='flex flex-row'>
+        { !pathname.includes('auth-redirect') && <SideMenu /> }
+        <Component {...pageProps} />
+      </div>
     </div>
-    </ThemeProvider>
   )
 }
