@@ -36,6 +36,7 @@ export interface IUserNews {
 export default class UserService {
   public static async addApppointment(appointment: IAppointment): Promise<IGetAppointmentResponse> {
     try {
+      console.log(appointment, process.env.SERVER + ServerRoutes.ADD_APPOINTMENT)
       const res = await axios.post(process.env.SERVER + ServerRoutes.ADD_APPOINTMENT, appointment);
       return res.data;
     } catch (err) {

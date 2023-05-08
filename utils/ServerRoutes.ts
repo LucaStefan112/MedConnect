@@ -6,14 +6,11 @@ export class ServerRoutes {
   public static GET_USERS = '/users/all';
   public static CHECK_AUTH = (token: string) => `/check-auth/${token}`;
   public static GET_SPECIALISATIONS = '/specialisations';
-  public static ADD_APPOINTMENT = '/appointment';
+  public static ADD_APPOINTMENT = '/appointments';
   public static GET_APPOINTMENT = (id: string) => `/appointments/${id}`;
   public static GET_APPOINTMENTS = '/appointments';
-  public static GET_DOCTORS_BY_SPECIALISATION = (specialisation: ISpecialisation) =>
-    `/doctors/specialisation/${specialisation.id}`;
-  public static GET_DOCTOR_AVAILABLE_DAYS = (doctor: IDoctor) => `/doctor/${doctor.id}/available-days`;
-  public static GET_DOCTOR_AVAILABLE_HOURS = (doctor: IDoctor, date: Date) => 
-    `/doctor/${doctor.id}/available-hours/${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+  public static GET_DOCTORS_BY_SPECIALISATION = (specialisation: ISpecialisation) => `/doctors/specialisation/${specialisation._id}`;
+  public static GET_DOCTOR_BUSY_INTERVALS = (doctor: IDoctor) => `/doctors/${doctor._id}/busy-intervals`;
   public static GET_NEWS = '/news';
   public static GET_ANALYSES = '/analyses';
 }

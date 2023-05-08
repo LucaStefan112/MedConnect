@@ -3,7 +3,7 @@ import axios from "axios";
 import { IGetDoctorsResponse, IGetSpecialisationsResponse } from "./response.interfaces";
 
 export interface ISpecialisation {
-  id: number;
+  _id: string;
   name: string;
 }
 

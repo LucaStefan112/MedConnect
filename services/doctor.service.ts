@@ -1,11 +1,11 @@
 import axios from "axios";
 import { ISpecialisation } from "./app.service";
-import { IGetDoctorAvailableDaysResponse, IGetDoctorAvailableHoursResponse, IGetDoctorsResponse } from "./response.interfaces";
+import { IGetDoctorBusyIntervalsResponse, IGetDoctorsResponse } from "./response.interfaces";
 import { ServerRoutes } from "@/utils/ServerRoutes";
 
 export interface IDoctor {
-  id: number;
-  name: string;
+  _id: string;
+  fullName: string;
   specialisation: ISpecialisation;
 }
 
@@ -13,6 +13,7 @@ export default class DoctorService {
   public static async getDoctors(specialisation: ISpecialisation): Promise<IGetDoctorsResponse> {
     try {
       const res = await axios.get(process.env.SERVER + ServerRoutes.GET_DOCTORS_BY_SPECIALISATION(specialisation));
+      console.log(res.data);
       return res.data;
     } catch (err) {
       console.log(err);
@@ -20,23 +21,13 @@ export default class DoctorService {
     }
   }
   
-  public static async getDoctorAvailableDays(doctor: IDoctor): Promise<IGetDoctorAvailableDaysResponse> {
+  public static async getDoctorBusyIntervals(doctor: IDoctor): Promise<IGetDoctorBusyIntervalsResponse> {
     try {
-      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_DOCTOR_AVAILABLE_DAYS(doctor));
+      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_DOCTOR_BUSY_INTERVALS(doctor));
       return res.data;
     } catch (err) {
       console.log(err);
-      return { success: false, message: "Error getting doctor available days"};
-    }
-  }
-  
-  public static async getDoctorAvailableHours(doctor: IDoctor, date: Date): Promise<IGetDoctorAvailableHoursResponse> {
-    try {
-      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_DOCTOR_AVAILABLE_HOURS(doctor, date));
-      return res.data;
-    } catch (err) {
-      console.log(err);
-      return { success: false, message: "Error getting doctor available hours"};
+      return { success: false, message: "Error getting doctor busy intervals"};
     }
   }
 }
