@@ -32,8 +32,8 @@ export default function CodSideMenu() {
     },
     {
       key: 3,
-      name: "My patients",
-      path: Routes.ANALYSES,
+      name: "My schedule",
+      path: Routes.SCHEDULE,
       icon: <LocalHospitalIcon className="h-16 w-16" />,
     },
   ];
