@@ -13,6 +13,7 @@ export interface IGetUserResponse extends IBasicResponse {
 
 export interface IGetSpecialisationsResponse extends IBasicResponse {
   specialisations?: ISpecialisation[];
+  success: boolean;
 }
 
 export interface IGetAppointmentResponse extends IBasicResponse {
@@ -27,12 +28,8 @@ export interface IGetDoctorsResponse extends IBasicResponse {
   doctors?: IDoctor[];
 }
 
-export interface IGetDoctorAvailableDaysResponse extends IBasicResponse {
-  availableDays?: Date[];
-}
-
-export interface IGetDoctorAvailableHoursResponse extends IBasicResponse {
-  availableHours?: Date[];
+export interface IGetDoctorBusyIntervalsResponse extends IBasicResponse {
+  busyIntervals?: string[];
 }
 
 export interface IGetUserNewsResponse extends IBasicResponse {

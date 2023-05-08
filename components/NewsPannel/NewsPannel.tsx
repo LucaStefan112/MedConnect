@@ -21,7 +21,7 @@ export default function () {
       flex flex-col items-center 
       bg-blue-600 w-2/3 h-80
       text-white text-center text-2xl
-      rounded-xl padding-10 shadow-xl'
+      rounded-xl padding-10 mr-10 shadow-xl'
     >
       
       <p className ='

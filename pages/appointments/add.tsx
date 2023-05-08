@@ -1,4 +1,4 @@
-import Scheduler from '@/components/Scheduler/Scheduler'
+import Scheduler from '../../components/Scheduler/Scheduler';
 import Head from 'next/head'
 import React from 'react'
 
