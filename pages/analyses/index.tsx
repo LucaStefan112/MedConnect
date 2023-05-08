@@ -9,6 +9,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import DownloadIcon from '@mui/icons-material/Download';
+// import cookieCutter from 'cookie-cutter'
+import { Console } from 'console';
+
+
+var cookie = require('cookie-cutter');
 
 export default function Analyses() {
   const router = useRouter();
@@ -35,7 +40,20 @@ export default function Analyses() {
   //   });
   // }, []);
 
+
+  useEffect(() => {
+    async function checkAuth() {
+      const token = cookie.get('token')
+      const response = await fetch('localhost:3002/ceck-auth/${token}')
+      console.log(response)
+      console.log(token)
+    }
+    checkAuth()
+  }, [])
+
+
   return (
+
     <div className='main_page'>
       <div className='flex flex-row items-center justify-between w-full h-14'>
         <SearchBar placeholder='Search analysis...' />
