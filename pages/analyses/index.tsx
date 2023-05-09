@@ -41,7 +41,7 @@ export default function Analyses() {
         <SearchBar placeholder='Search analysis...' />
       </div>
       <p className='text-4xl mt-7 mb-7 text-blue-600 w-full'>
-        My Analyses
+        Marian Popescu [ID- 1idd6qtagq3]
       </p>
       <VerticalList className='analyses_list_max_height'
         list= {
