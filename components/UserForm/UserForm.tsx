@@ -70,14 +70,6 @@ export default function UserForm({ user, isChild }: IProps) {
           <option value='single'>Single</option>
           <option value='married'>Married</option>
         </select>
-        <label>Children</label>
-        <select className='input_field' name='children'>
-          <option>Child_1</option>
-          <option>Child_2</option>
-          <option>Child_3</option>
-        </select>
-        <label>Emergency Contact</label>
-        <input type='text' className='input_field' name='emergencyContact' value={ user?.emergencyContact } />
       </div>
       )}
     </form>

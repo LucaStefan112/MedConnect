@@ -28,6 +28,17 @@ export default function () {
       >
         News
       </p>
+      <ul className='list-disc list-inside'>
+        <li>
+          Create a new appointment right now using the New Appointment feature!
+        </li>
+        <li>
+          Please make sure to update your profile with the latest data and credentials!
+        </li>
+        <li>
+          Check out the new specialized doctors joining our network. Find a specialist for your need!
+        </li>
+      </ul>
     </div>
   )
 }

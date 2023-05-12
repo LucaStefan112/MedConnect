@@ -35,7 +35,7 @@ export default function SearchBar({ placeholder, className }: IVerticalListProps
       bg-blue-50
       ${className}`}
     >
-      <select className='
+      {/* <select className='
         bg-blue-50 outline-none 
         text-blue-900 text-lg 
         h-3/4 max-w-[10em]' 
@@ -45,7 +45,7 @@ export default function SearchBar({ placeholder, className }: IVerticalListProps
             <option key={ index } value={ person.id }>{ person.name }</option>
           ))
         }
-      </select>
+      </select> */}
 
       <input className='
         text-blue-900 text-lg
