@@ -4,7 +4,7 @@ import Image from 'next/image';
 import PersonIcon from '@mui/icons-material/Person';
 import { Button } from '@mui/material';
 import Link from 'next/link';
-import Routes from '@/utils/Routes';
+import Routes from '../../utils/Routes';
 
 export default function Header () {
   return (
