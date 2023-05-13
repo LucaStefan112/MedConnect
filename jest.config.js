@@ -19,7 +19,7 @@ const customJestConfig = {
     collectCoverageFrom: [
       './components/**/*.{js,jsx,ts,tsx}', // Include components folder
       './pages/**/*.{js,jsx,ts,tsx}', // Include pages folder
-      './__test__/**/*.{js,jsx,ts,tsx}',
+
       './utils/**/*.{js,jsx,ts,tsx}',
       './services/**/*.{js,jsx,ts,tsx}'
     ],
