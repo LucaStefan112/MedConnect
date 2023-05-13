@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button } from '@mui/material'
 import Link from 'next/link'
-import Routes from '@/utils/Routes'
-import Appointment from '@/pages/appointments/[id]'
+import Routes from '../../utils/Routes'
+import Appointment from '../../pages/appointments/[id]'
 
 
 

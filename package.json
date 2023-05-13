@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start -p 3003",
     "lint": "next lint",
-    "test": "jest --coverage --watchAll"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -37,6 +37,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^29.5.1",
     "@types/react-datepicker": "^4.10.0",
     "@types/react-pdf": "^6.2.0",
