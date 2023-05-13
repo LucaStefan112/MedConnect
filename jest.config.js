@@ -16,10 +16,8 @@ const customJestConfig = {
   clearMocks: true,
   collectCoverage: true,
   collectCoverageFrom: [
-    './src//*.{js,jsx,ts,tsx}',
-    '!./src//_.{js,jsx,ts,tsx}',
-    '!**/.d.ts',
-    '!/node_modules/',
+    "**/*.{tsx}",
+  "!**/node_modules/**"
   ],
   coverageThreshold: {
     global: {

@@ -1,4 +1,4 @@
-import { ServerRoutes } from "@/utils/ServerRoutes";
+import { ServerRoutes } from "../utils/ServerRoutes";
 import axios from "axios";
 import { IBasicResponse } from "./response.interfaces";
 

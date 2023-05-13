@@ -2,7 +2,7 @@ import { IGetUserNewsResponse } from '@/services/response.interfaces';
 import UserService, { IUserNews } from '@/services/user.service';
 import React, { useEffect } from 'react'
 
-export default function () {
+export default function NewsPannel () {
   const [news, setNews] = React.useState<IUserNews[]>([]);
 
   // useEffect(() => {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { IGetAnalysesResponse, IGetAppointmentResponse, IGetAppointmentsResponse, IGetUserNewsResponse, IGetUserResponse, IGetUsersResponse } from "./response.interfaces";
-import { ServerRoutes } from "@/utils/ServerRoutes";
+import { ServerRoutes } from "../utils/ServerRoutes";
 import { ISpecialisation } from "./app.service";
 import { IDoctor } from "./doctor.service";
 

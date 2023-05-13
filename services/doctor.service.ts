@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ISpecialisation } from "./app.service";
 import { IGetDoctorBusyIntervalsResponse, IGetDoctorsResponse } from "./response.interfaces";
-import { ServerRoutes } from "@/utils/ServerRoutes";
+import { ServerRoutes } from "../utils/ServerRoutes";
 
 export interface IDoctor {
   _id: string;

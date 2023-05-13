@@ -1,14 +1,14 @@
-import AppService, { ISpecialisation } from '@/services/app.service';
-import AuthService from '@/services/auth.service';
-import DoctorService, { IDoctor } from '@/services/doctor.service';
+import AppService, { ISpecialisation } from '../../services/app.service';
+import AuthService from '../../services/auth.service';
+import DoctorService, { IDoctor } from '../../services/doctor.service';
 import { 
   IGetDoctorBusyIntervalsResponse,
   IGetDoctorsResponse,
-  IGetSpecialisationsResponse } from '@/services/response.interfaces';
-import UserService, { IAppointment } from '@/services/user.service';
-import DateTimeParser from '@/utils/DateTimeParser';
-import Routes from '@/utils/Routes';
-import { Button, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+  IGetSpecialisationsResponse } from '../../services/response.interfaces';
+import UserService, { IAppointment } from '../../services/user.service';
+import DateTimeParser from '../../utils/DateTimeParser';
+import Routes from '../../utils/Routes';
+import { Button, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '../../node_modules/@mui/material';
 import { addDays, set, setHours, setMinutes } from 'date-fns';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
