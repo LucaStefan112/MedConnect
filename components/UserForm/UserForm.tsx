@@ -1,4 +1,4 @@
-import DateTimeParser from '@/utils/DateTimeParser';
+import DateTimeParser from '../../utils/DateTimeParser';
 import React from 'react'
 
 export interface IUserData {

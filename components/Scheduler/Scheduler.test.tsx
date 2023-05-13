@@ -31,6 +31,23 @@ describe('Scheduler', () => {
   test('renders scheduler form and submits appointment', async () => {
     render(<Scheduler />);
 
-    // Rest of the test code...
+    // Select a specialisation
+    fireEvent.change(screen.getByTestId('specialisation-select'), { target: { value: 'specialisation_id' } });
+
+    // Wait for doctors to be loaded
+    await waitFor(() => expect(DoctorService.getDoctors).toHaveBeenCalled());
+
+    // Select a doctor
+    fireEvent.change(screen.getByTestId('doctor-select'), { target: { value: 'doctor_id' } });
+
+    // Submit the form
+    fireEvent.click(screen.getByTestId('submit-button'));
+
+    // Wait for the form submission to complete
+    await waitFor(() => expect(UserService.addApppointment).toHaveBeenCalled());
+
+    // Assert on the outcome
+    expect(screen.getByText('Appointment scheduled!')).toBeInTheDocument();
+    expect(screen.getByText('Appointments')).toBeInTheDocument();
   });
 });
