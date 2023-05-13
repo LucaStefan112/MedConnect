@@ -1,9 +1,22 @@
 import React from 'react';
-import UserForm from '@/components/UserForm/UserForm';
+import UserForm, { IUserData } from '@/components/UserForm/UserForm';
 import PersonIcon from '@mui/icons-material/Person';
 import { Button } from '@mui/material';
+import UserService from '@/services/user.service';
 
 export default function Profile() {
+  const [userData, setUserData] = React.useState({} as IUserData);
+
+  const saveData = () => {
+    UserService.updateUserData(userData).then((res) => {
+      if(res.success) {
+        console.log('Data updated successfully!');
+      } else {
+        console.log('Error updating data!');
+      }
+    });
+  }
+
   return (
     <div className='main_page'>
       <div className='
@@ -19,9 +32,9 @@ export default function Profile() {
             mb-6'
             color = 'primary'
         />
-        <Button className = 'main_button h-10 w-20 text-lg'>Save</Button>
+        <Button className = 'main_button h-10 w-20 text-lg' onClick={ () => saveData() }>Save</Button>
       </div>
-      <UserForm />
+      <UserForm saveData={ setUserData } />
     </div>
   )
 }

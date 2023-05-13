@@ -5,14 +5,15 @@ import { ServerRoutes } from "@/utils/ServerRoutes";
 
 export interface IDoctor {
   _id: string;
-  fullName: string;
+  firstName: string;
+  lastName: string;
   specialisation: ISpecialisation;
 }
 
 export default class DoctorService {
   public static async getDoctors(specialisation: ISpecialisation): Promise<IGetDoctorsResponse> {
     try {
-      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_DOCTORS_BY_SPECIALISATION(specialisation));
+      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_DOCTORS_BY_SPECIALISATION(specialisation), { withCredentials: true });
       console.log(res.data);
       return res.data;
     } catch (err) {
@@ -23,7 +24,7 @@ export default class DoctorService {
   
   public static async getDoctorBusyIntervals(doctor: IDoctor): Promise<IGetDoctorBusyIntervalsResponse> {
     try {
-      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_DOCTOR_BUSY_INTERVALS(doctor));
+      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_DOCTOR_BUSY_INTERVALS(doctor), { withCredentials: true });
       return res.data;
     } catch (err) {
       console.log(err);

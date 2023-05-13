@@ -10,7 +10,7 @@ export interface ISpecialisation {
 export default class AppService {
   public static async getSpecialisations(): Promise<IGetSpecialisationsResponse> {
     try {
-      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_SPECIALISATIONS);
+      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_SPECIALISATIONS, { withCredentials: true });
       return res.data;
     } catch (err) {
       console.log(err);

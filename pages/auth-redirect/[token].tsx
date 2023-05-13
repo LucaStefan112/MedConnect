@@ -17,21 +17,29 @@ export default function AutshRedirect({ token }: { token: string }) {
   const router = useRouter();
   
   const data = {
-    email: 'a@ab.com',
-    password: '12345',
-  }
+  email: "lucastefantamas@gmail.com",
+  password: "LucaLuca1234"
+};
 
   useEffect(() => {
-    AuthService.login(data).then((res: any) => {
-      console.log(res.token);
-      AuthService.checkAuth(res.token).then((res: IBasicResponse) => {
-        console.log(res);
-        // if (res.success) {
-        //   router.replace(Routes.HOME);
-        // } else {
-        //   router.replace(Routes.AUTH_APP);
-        // }
-      });
+    AuthService.checkAuth().then((res: IBasicResponse) => {
+      if (res.success) {
+        router.replace(Routes.HOME);
+        setTimeout(() => {
+          window.location.reload();
+        }, 100);
+      } else {
+        AuthService.login(data).then((res: any) => {
+          if (res.success) {
+            router.replace(Routes.HOME);
+            setTimeout(() => {
+              window.location.reload();
+            }, 100);
+          } else {
+            router.replace(Routes.AUTH_APP);
+          }
+        });
+      }
     });
   }, []);
 
