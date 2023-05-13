@@ -63,11 +63,10 @@ export default function PatientInfo(props: any) {
       </h1>
       <div className="bg-blue-200 rounded-xl p-3">
         <p>
-          Request: Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Praesentium, delectus.
+          Request: Provide detailed analyses.
         </p>
       </div>
-      <h1 className="text-blue-500 font-bold text-3xl mb-3 mt-3">Chat</h1>
+      {/* <h1 className="text-blue-500 font-bold text-3xl mb-3 mt-3">Chat</h1>
       <div className="bg-blue-200 rounded-xl p-3 h-[20vh]">
         <div className="overflow-auto h-[13vh]">
           <p>
@@ -106,7 +105,7 @@ export default function PatientInfo(props: any) {
             Send
           </button>
         </div>
-      </div>
+      </div> */}
       {/* add input to this chat and send button */}
       <h1 className="text-blue-500 font-bold text-3xl mb-3 mt-3">Analyses</h1>
       <button
