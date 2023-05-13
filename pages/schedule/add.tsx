@@ -1,10 +1,10 @@
-import SchedulerDoctor from '@/components/Scheduler/SchedulerDoctor'
+import DoctorScheduler from '@/components/DoctorScheduler/DoctorScheduler'
 import React from 'react'
 
 export default function AddSchedule() {
   return (
     <div className='main_page'>
-      <SchedulerDoctor />
+      <DoctorScheduler></DoctorScheduler>
     </div>
   )
 }
