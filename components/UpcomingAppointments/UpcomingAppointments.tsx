@@ -32,7 +32,7 @@ export default function UpcomingAppointments ()
 
       {
         data.map(appointment => (
-          <Button className='
+          <Button key={ appointment.id } className='
             bg-blue-100 hover:bg-blue-50
             text-black text-lg
               p-4 mt-4

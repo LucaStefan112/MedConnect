@@ -17,7 +17,7 @@ export default function Home() {
       <div className='flex flex-row justify-between w-full items-center'>
         <Image src={ Images.HOME_IMAGE } alt='Home Image' width={ 500 } height={ 500 } />
         <div className='flex flex-col justify-center items-center mr-32'>
-          <p className='text-3xl mb-6'>
+          <p className='text-3xl mb-6 w-3/4 text-center'>
             Want so schedule an appointment?
           </p>
           <Link href={ Routes.ADD_APPOINTMENT }>

@@ -1,8 +1,9 @@
 import axios from "axios";
-import { IGetAnalysesResponse, IGetAppointmentResponse, IGetAppointmentsResponse, IGetUserNewsResponse, IGetUserResponse, IGetUsersResponse } from "./response.interfaces";
+import { IGetAnalysesResponse, IGetAppointmentResponse, IGetAppointmentsResponse, IGetUserDataResponse } from "./response.interfaces";
 import { ServerRoutes } from "@/utils/ServerRoutes";
 import { ISpecialisation } from "./app.service";
 import { IDoctor } from "./doctor.service";
+import { IUserData } from "@/components/UserForm/UserForm";
 
 export interface IUser {
   id: number;
@@ -37,7 +38,7 @@ export default class UserService {
   public static async addApppointment(appointment: IAppointment): Promise<IGetAppointmentResponse> {
     try {
       console.log(appointment, process.env.SERVER + ServerRoutes.ADD_APPOINTMENT)
-      const res = await axios.post(process.env.SERVER + ServerRoutes.ADD_APPOINTMENT, appointment);
+      const res = await axios.post(process.env.SERVER + ServerRoutes.ADD_APPOINTMENT, appointment, { withCredentials: true });
       return res.data;
     } catch (err) {
       console.log(err);
@@ -47,7 +48,7 @@ export default class UserService {
 
   public static async getAppointments(): Promise<IGetAppointmentsResponse> {
     try {
-      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_APPOINTMENTS);
+      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_APPOINTMENTS, { withCredentials: true });
       return res.data;
     } catch (err) {
       console.log(err);
@@ -57,7 +58,7 @@ export default class UserService {
 
   public static async getAppointment(id: string): Promise<IGetAppointmentResponse> {
     try {
-      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_APPOINTMENT(id));
+      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_APPOINTMENT(id), { withCredentials: true });
       return res.data;
     } catch (err) {
       console.log(err);
@@ -65,29 +66,20 @@ export default class UserService {
     }
   }
 
-  public static async getNews(): Promise<IGetUserNewsResponse> {
+  public static async getUserData(): Promise<IGetUserDataResponse> {
     try {
-      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_NEWS);
+      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_USER_DATA, { withCredentials: true });
       return res.data;
     } catch (err) {
       console.log(err);
-      return { success: false, message: "Error getting news" };
+      return { success: false, message: "Error getting user data" };
     }
   }
 
-  public static async getUsers(): Promise<IGetUsersResponse> {
-    try {
-      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_USERS);
-      return res.data;
-    } catch (err) {
-      console.log(err);
-      return { success: false, message: "Error getting users" };
-    }
-  }
 
   public static async getAnalyses(): Promise<IGetAnalysesResponse> {
     try {
-      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_ANALYSES);
+      const res = await axios.get(process.env.SERVER + ServerRoutes.GET_ANALYSES, { withCredentials: true });
       return res.data;
     } catch (err) {
       console.log(err);
@@ -95,4 +87,13 @@ export default class UserService {
     }
   }
 
+  public static async updateUserData(userData: IUserData): Promise<IGetUserDataResponse> {
+    try {
+      const res = await axios.put(process.env.SERVER + ServerRoutes.UPDATE_USER_DATA, userData, { withCredentials: true });
+      return res.data;
+    } catch (err) {
+      console.log(err);
+      return { success: false, message: "Error updating user data" };
+    }
+  }
 }

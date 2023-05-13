@@ -1,4 +1,3 @@
-import SearchBar from '@/components/SearchBar/SearchBar'
 import VerticalList from '@/components/VerticalList/VerticalList'
 import { IGetAnalysesResponse } from '@/services/response.interfaces';
 import UserService, { IAnalysis } from '@/services/user.service';
@@ -38,7 +37,6 @@ export default function Analyses() {
   return (
     <div className='main_page'>
       <div className='flex flex-row items-center justify-between w-full h-14'>
-        <SearchBar placeholder='Search analysis...' />
       </div>
       <p className='text-4xl mt-7 mb-7 text-blue-600 w-full'>
         My Analyses

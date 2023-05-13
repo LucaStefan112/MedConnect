@@ -44,17 +44,6 @@ export default function Scheduler() {
   useEffect(() => {
     setAvailableDays(defaultDays);
 
-    AuthService.login({
-      "email": "lucastefantamas@gmail.com",
-      "password": "LucaLuca1234"
-    }).then((res: any) => {
-      if(res.success) {
-          console.log(res);
-      } else {
-        console.log(res);
-      }
-    });
-
     AppService.getSpecialisations().then((res: IGetSpecialisationsResponse) => {
       if(res.success && res.specialisations) {
         setSpecialisations(res.specialisations);
@@ -68,6 +57,8 @@ export default function Scheduler() {
     e.preventDefault();
     const response = await UserService.addApppointment(appointment);
     
+    console.log(JSON.stringify(appointment));
+
     if(response.success) {
       alert('Appointment scheduled!');
       router.push(Routes.APPOINTMENTS);
@@ -181,7 +172,7 @@ export default function Scheduler() {
                         key={ doctor._id }
                         value={ doctor._id }
                       >
-                        { doctor.fullName }
+                        { doctor.firstName + ' ' + doctor.lastName }
                       </MenuItem>
                     ))
                   }

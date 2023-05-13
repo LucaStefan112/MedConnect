@@ -1,3 +1,4 @@
+import { IUserData } from "@/components/UserForm/UserForm";
 import { ISpecialisation } from "./app.service";
 import { IDoctor } from "./doctor.service";
 import { IAnalysis, IAppointment, IUser, IUserNews } from "./user.service";
@@ -36,8 +37,8 @@ export interface IGetUserNewsResponse extends IBasicResponse {
   news?: IUserNews[];
 }
 
-export interface IGetUsersResponse extends IBasicResponse {
-  users?: IUser[];
+export interface IGetUserDataResponse extends IBasicResponse {
+  user?: IUserData;
 }
 
 export interface IGetAnalysesResponse extends IBasicResponse {
