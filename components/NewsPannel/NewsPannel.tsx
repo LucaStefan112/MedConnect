@@ -18,7 +18,7 @@ export default function () {
   return (
     <div className='
       flex flex-col items-center 
-      bg-blue-600 w-2/3 h-80
+      bg-blue-600 w-4/5 h-80
       text-white text-center text-2xl
       rounded-xl padding-10 shadow-xl'
     >

@@ -10,9 +10,8 @@ import Routes from '@/utils/Routes'
 export default function Home() {
   return (
     <div className='main_page justify-between'>
-      <div className='flex flex-row justify-between w-full'>
+      <div className='flex flex-row justify-center w-full'>
         <NewsPannel />
-        <UpcomingAppointments />
       </div>
       <div className='flex flex-row justify-between w-full items-center'>
         <Image src={ Images.HOME_IMAGE } alt='Home Image' width={ 500 } height={ 500 } />
