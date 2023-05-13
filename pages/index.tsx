@@ -17,11 +17,11 @@ export default function Home() {
         <Image src={ Images.HOME_IMAGE } alt='Home Image' width={ 500 } height={ 500 } />
         <div className='flex flex-col justify-center items-center mr-32'>
           <p className='text-3xl mb-6'>
-            Want to schedule an appointment?
+            Want to check out your schedule?
           </p>
-          <Link href={ Routes.ADD_APPOINTMENT }>
+          <Link href={ Routes.SCHEDULELIST }>
             <Button className='main_button text-lg h-14 m-4'>
-              New Appointment
+              My Schedule
             </Button>
           </Link>
         </div>
