@@ -1,5 +1,5 @@
 import React from 'react';
-import UserForm from '@/components/UserForm/UserForm';
+import UserForm from '../components/UserForm/UserForm';
 import PersonIcon from '@mui/icons-material/Person';
 import { Button } from '@mui/material';
 

@@ -1,5 +1,5 @@
-import Header from '@/components/Header/Header';
-import SideMenu from '@/components/SideMenu/SideMenu'
+import Header from '../components/Header/Header';
+import SideMenu from '../components/SideMenu/SideMenu'
 import '@/styles/globals.scss'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router';
