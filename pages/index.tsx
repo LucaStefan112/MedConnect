@@ -10,7 +10,7 @@ import Routes from '@/utils/Routes'
 export default function Home() {
   return (
     <div className='main_page justify-between'>
-      <div className='flex flex-row justify-center w-full'>
+      <div className='flex flex-row justify-center w-full pb-10'>
         <NewsPannel />
       </div>
       <div className='flex flex-row justify-between w-full items-center'>
