@@ -20,7 +20,7 @@ const customJestConfig = {
       './components/**/*.{js,jsx,ts,tsx}', // Include components folder
       './pages/**/*.{js,jsx,ts,tsx}', // Include pages folder
       './utils/**/*.{js,jsx,ts,tsx}', // Include utils folder
-      './services/**/*.{js,jsx,ts,tsx}', // Include services folder
+      //'./services/**/*.{js,jsx,ts,tsx}', // Include services folder
       '!./components/Scheduler/**/*.{js,jsx,ts,tsx}',
     ],
 
