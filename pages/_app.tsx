@@ -1,7 +1,7 @@
-import Header from '@/components/Header/Header';
+import Header from '../components/Header/Header';
 // import SideMenu from '@/components/SideMenu/PatientSideMenu'
 import PatientSideMenu from '@/components/SideMenu/PatientSideMenu';
-import DoctorSideMenu from '@/components/SideMenu/DoctorSideMenu';
+import DoctorSideMenu from '../components/SideMenu/DoctorSideMenu';
 import '@/styles/globals.scss'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router';

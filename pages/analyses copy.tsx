@@ -1,8 +1,11 @@
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import DownloadIcon from '@mui/icons-material/Download';
-import Searchbar from '@/components/SearchBar/SearchBar';
+import Searchbar from '../components/SearchBar/SearchBar';
+export interface AnalysisRectangleProps {
+  fileName: string;
+}
 
-export function AnalysisRectangle(props: {fileName:string}) {
+export function AnalysisRectangle(props: AnalysisRectangleProps) {
   const filePath:string = "./pdfViewer?fileName=" + props.fileName;
 
   return (

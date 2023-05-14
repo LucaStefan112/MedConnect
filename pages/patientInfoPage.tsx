@@ -1,5 +1,5 @@
 import React from "react";
-import PatientInfo from "@/components/PatientInfo/PatientInfo";
+import PatientInfo from "../components/PatientInfo/PatientInfo";
 import { useRouter } from "next/router";
 import path from "path";
 

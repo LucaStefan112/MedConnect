@@ -1,9 +1,9 @@
-import SearchBar from '@/components/SearchBar/SearchBar'
-import VerticalList from '@/components/VerticalList/VerticalList'
+import SearchBar from '../../components/SearchBar/SearchBar'
+import VerticalList from '../../components/VerticalList/VerticalList'
 import { IGetAnalysesResponse } from '@/services/response.interfaces';
-import UserService, { IAnalysis } from '@/services/user.service';
-import DateTimeParser from '@/utils/DateTimeParser';
-import Routes from '@/utils/Routes';
+import UserService, { IAnalysis } from '../../services/user.service';
+import DateTimeParser from '../../utils/DateTimeParser';
+import Routes from '../../utils/Routes';
 import { Button } from '@mui/material'
 import Link from 'next/link';
 import { useRouter } from 'next/router';
