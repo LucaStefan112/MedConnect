@@ -24,12 +24,12 @@ export default function CodSideMenu() {
       path: Routes.APPOINTMENTS,
       icon: <CalendarMonthOutlinedIcon className="h-16 w-16" />,
     },
-    {
-      key: 2,
-      name: "All patients",
-      path: Routes.MY_ACCOUNT,
-      icon: <GroupsIcon className="h-16 w-16" />,
-    },
+    // {
+    //   key: 2,
+    //   name: "All patients",
+    //   path: Routes.MY_ACCOUNT,
+    //   icon: <GroupsIcon className="h-16 w-16" />,
+    // },
     {
       key: 3,
       name: "My schedule",
