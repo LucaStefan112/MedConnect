@@ -21,6 +21,7 @@ describe('UserForm', () => {
         specialization: 'Cardiologie'
     };
 
+
     const mockProps: IProps = {
         user: mockUserData,
         isChild: false
