@@ -1,4 +1,4 @@
-import DoctorScheduler from '@/components/DoctorScheduler/DoctorScheduler'
+import DoctorScheduler from '../../components/DoctorScheduler/DoctorScheduler'
 import React from 'react'
 
 export default function AddSchedule() {
