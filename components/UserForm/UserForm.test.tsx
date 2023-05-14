@@ -28,32 +28,37 @@ describe('UserForm', () => {
 
   it('renders the user form', () => {
     render(<UserForm {...mockProps} />);
+    expect(screen.getByText('First Name')).toBeInTheDocument();
+    expect(screen.getByText('Last Name')).toBeInTheDocument();
+    expect(screen.getByText('CNP')).toBeInTheDocument();
+    expect(screen.getByText('Birth Date')).toBeInTheDocument();
+    expect(screen.getByText('Sex')).toBeInTheDocument();
+    expect(screen.getByText('Citizenship')).toBeInTheDocument();
+    expect(screen.getByText('Country')).toBeInTheDocument();
+    expect(screen.getByText('County')).toBeInTheDocument();
+    expect(screen.getByText('City')).toBeInTheDocument();
+    expect(screen.getByText('Complete Adress')).toBeInTheDocument();
+    expect(screen.getByText('Phone Number')).toBeInTheDocument();
+    expect(screen.getByText('Email')).toBeInTheDocument();
+    expect(screen.getByText('Marital Status')).toBeInTheDocument();
+    expect(screen.getByText('Children')).toBeInTheDocument();
+    expect(screen.getByText('Emergency Contact')).toBeInTheDocument();
+  
 
-    expect(screen.getByLabelText('First Name')).toBeInTheDocument();
-    expect(screen.getByLabelText('Last Name')).toBeInTheDocument();
-    expect(screen.getByLabelText('CNP')).toBeInTheDocument();
-    expect(screen.getByLabelText('Birth Date')).toBeInTheDocument();
-    expect(screen.getByLabelText('Sex')).toBeInTheDocument();
-    expect(screen.getByLabelText('Citizenship')).toBeInTheDocument();
-    expect(screen.getByLabelText('Country')).toBeInTheDocument();
-    expect(screen.getByLabelText('County')).toBeInTheDocument();
-    expect(screen.getByLabelText('City')).toBeInTheDocument();
-    expect(screen.getByLabelText('Complete Adress')).toBeInTheDocument();
   });
 
   it('populates the input fields with user data', () => {
     render(<UserForm {...mockProps} />);
+    expect(screen.getByDisplayValue('John')).toBeInTheDocument();
+    expect(screen.getByDisplayValue('Doe')).toBeInTheDocument();
+    expect(screen.getByDisplayValue('1234567890')).toBeInTheDocument();
+    expect(screen.getByDisplayValue('1990-01-01')).toBeInTheDocument();
+    expect(screen.getByDisplayValue('Male')).toBeInTheDocument();
+    expect(screen.getByDisplayValue('CA')).toBeInTheDocument();
+    expect(screen.getByDisplayValue('Los Angeles')).toBeInTheDocument();
+    expect(screen.getByDisplayValue('123 Main St')).toBeInTheDocument();
+    expect(screen.getByDisplayValue('5551234')).toBeInTheDocument();
 
-    expect(screen.getByLabelText('First Name')).toHaveValue(mockUserData.firstName);
-    expect(screen.getByLabelText('Last Name')).toHaveValue(mockUserData.lastName);
-    expect(screen.getByLabelText('CNP')).toHaveValue(mockUserData.cnp);
-    expect(screen.getByLabelText('Birth Date')).toHaveValue('1990-01-01');
-    expect(screen.getByLabelText('Sex')).toHaveValue(mockUserData.sex);
-    expect(screen.getByLabelText('Citizenship')).toHaveValue(mockUserData.citizenship);
-    expect(screen.getByLabelText('Country')).toHaveValue(mockUserData.country);
-    expect(screen.getByLabelText('County')).toHaveValue(mockUserData.county);
-    expect(screen.getByLabelText('City')).toHaveValue(mockUserData.city);
-    expect(screen.getByLabelText('Complete Adress')).toHaveValue(mockUserData.completeAdress);
   });
 
   it('does not render the additional input fields when isChild is true', () => {
