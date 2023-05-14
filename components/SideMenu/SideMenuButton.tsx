@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import Routes from '@/utils/Routes';
+import Routes from '../../utils/Routes';
 
 export default function SideMenuButton ({ path, name, icon } : { path: string, name: string, icon: JSX.Element }) {
   const { pathname } = useRouter ();
