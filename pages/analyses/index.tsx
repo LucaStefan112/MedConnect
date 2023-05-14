@@ -37,9 +37,9 @@ export default function Analyses() {
 
   return (
     <div className='main_page'>
-      <div className='flex flex-row items-center justify-between w-full h-14'>
+      {/* <div className='flex flex-row items-center justify-between w-full h-14'>
         <SearchBar placeholder='Search analysis...' />
-      </div>
+      </div> */}
       <p className='text-4xl mt-7 mb-7 text-blue-600 w-full'>
         Marian Popescu [ID- 1idd6qtagq3]
       </p>
