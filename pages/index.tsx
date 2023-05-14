@@ -19,7 +19,7 @@ export default function Home() {
           <p className='text-3xl mb-6'>
             Want to check out your schedule?
           </p>
-          <Link href={ Routes.SCHEDULELIST }>
+          <Link href={ Routes.SCHEDULE }>
             <Button className='main_button text-lg h-14 m-4'>
               My Schedule
             </Button>
