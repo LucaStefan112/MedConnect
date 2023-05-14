@@ -1,4 +1,4 @@
-import DateTimeParser from '@/utils/DateTimeParser';
+import DateTimeParser from '../../utils/DateTimeParser';
 import React from 'react'
 
 export interface IUserData {
@@ -30,15 +30,15 @@ export default function UserForm({ user, isChild }: IProps) {
     <form className='flex flex-row w-full justify-evenly h-full items-center'>
       <div className='user_form_column'>
         <label>First Name</label>
-        <input type='text' className='input_field' name='firstName' value={ user?.firstName } />
+        <input type='text' className='input_field' name='firstName' value={user?.firstName} />
         <label>Last Name</label>
-        <input type='text' className='input_field' name='lastName' value={ user?.lastName } />
+        <input type='text' className='input_field' name='lastName' value={user?.lastName} />
         <label>CNP</label>
-        <input type='number' className='input_field' name='cnp' value={ user?.cnp } />
+        <input type='number' className='input_field' name='cnp' value={user?.cnp} />
         <label>Birth Date</label>
-        <input type='date' className='input_field' name='dateOfBirth' value={ user && DateTimeParser.parseDate(user.birthDate) } />
+        <input type='date' className='input_field' name='dateOfBirth' value={user && DateTimeParser.parseDate(user.birthDate)} />
         <label>Sex</label>
-        <select className='input_field' name='sex' value={ user?.sex }>
+        <select className='input_field' name='sex' value={user?.sex}>
           <option>Prefer Not To Say</option>
           <option>Male</option>
           <option>Female</option>
@@ -48,32 +48,32 @@ export default function UserForm({ user, isChild }: IProps) {
 
       <div className='user_form_column'>
         <label>Citizenship</label>
-        <input type='text' className='input_field' name='citizenship' value={ user?.citizenship } />
+        <input type='text' className='input_field' name='citizenship' value={user?.citizenship} />
         <label>Country</label>
-        <input type='text' className='input_field' name='country' value={ user?.country } />
+        <input type='text' className='input_field' name='country' value={user?.country} />
         <label>County</label>
-        <input type='text' className='input_field' name='county' value={ user?.county } />
+        <input type='text' className='input_field' name='county' value={user?.county} />
         <label>City</label>
-        <input type='text' className='input_field' name='city' value={ user?.city } />
+        <input type='text' className='input_field' name='city' value={user?.city} />
         <label>Complete Adress</label>
-        <input type='text' className='input_field' name='completeAdress' value={ user?.completeAdress } />
+        <input type='text' className='input_field' name='completeAdress' value={user?.completeAdress} />
       </div>
 
-      { !isChild && (
-      <div className='user_form_column'>
-        <label>Phone Number</label>
-        <input type='text' className='input_field' name='phoneNumber' value={ user?.phoneNumber } />
-        <label>Email</label>
-        <input type='email' className='input_field' name='email' value={ user?.email } />
-        <label>Marital Status</label>
-        <select className='input_field' name='maritalStatus' value={ user?.maritalStatus }>
-          <option value='none'>Prefer not to say</option>
-          <option value='single'>Single</option>
-          <option value='married'>Married</option>
-        </select>
-        <label>Specialization</label>
-        <input type='text' className='input_field' name='specialization' value={user?.specialization}/>
-      </div>
+      {!isChild && (
+        <div className='user_form_column'>
+          <label>Phone Number</label>
+          <input type='text' className='input_field' name='phoneNumber' value={user?.phoneNumber} />
+          <label>Email</label>
+          <input type='email' className='input_field' name='email' value={user?.email} />
+          <label>Marital Status</label>
+          <select className='input_field' name='maritalStatus' value={user?.maritalStatus}>
+            <option value='none'>Prefer not to say</option>
+            <option value='single'>Single</option>
+            <option value='married'>Married</option>
+          </select>
+          <label>Specialization</label>
+          <input type='text' className='input_field' name='specialization' value={user?.specialization} />
+        </div>
       )}
     </form>
   )
