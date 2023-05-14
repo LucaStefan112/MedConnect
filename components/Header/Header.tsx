@@ -22,7 +22,7 @@ export default function Header () {
       </div>
       <div className='flex justify-between items-center w-64 mr-10'>
         <Button className='main_button h-12 w-28 text-lg'>Log Out</Button>
-        <Link href={ Routes.LOGOUT }>
+        <Link href={ Routes.MY_ACCOUNT }>
           <PersonIcon className='
             h-24 w-24
             bg-blue-50
