@@ -10,19 +10,18 @@ import Routes from '@/utils/Routes'
 export default function Home() {
   return (
     <div className='main_page justify-between'>
-      <div className='flex flex-row justify-between w-full'>
+      <div className='flex flex-row justify-center w-full'>
         <NewsPannel />
-        <UpcomingAppointments />
       </div>
       <div className='flex flex-row justify-between w-full items-center'>
         <Image src={ Images.HOME_IMAGE } alt='Home Image' width={ 500 } height={ 500 } />
         <div className='flex flex-col justify-center items-center mr-32'>
           <p className='text-3xl mb-6'>
-            Want so schedule an appointment?
+            Want to check out your schedule?
           </p>
-          <Link href={ Routes.ADD_APPOINTMENT }>
+          <Link href={ Routes.SCHEDULELIST }>
             <Button className='main_button text-lg h-14 m-4'>
-              New Appointment
+              My Schedule
             </Button>
           </Link>
         </div>
