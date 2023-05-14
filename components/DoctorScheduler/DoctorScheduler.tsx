@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import fs from 'fs';
 
 export default function DoctorScheduler () {
   const router = useRouter();
@@ -100,6 +101,13 @@ export default function DoctorScheduler () {
     }));
   }
 
+  const saveJson = () => {
+    //put doctorInterval in json object
+    const json = JSON.stringify(doctorIntervals);
+    //print json object in console
+    console.log(doctorIntervals);
+  }
+
   return (
     <div className='w-full h-10 flex flex-row justify-evenly mt-6'>
       {
@@ -130,7 +138,7 @@ export default function DoctorScheduler () {
           
         ))
       }
-       <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+       <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={()=> saveJson()}>
         Save
         </button>
     </div>
