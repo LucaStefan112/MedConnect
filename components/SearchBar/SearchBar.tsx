@@ -1,5 +1,4 @@
-import { IGetUsersResponse } from '@/services/response.interfaces';
-import UserService, { IUser } from '@/services/user.service';
+import { IUser } from '../../services/user.service';
 import SearchIcon from '@mui/icons-material/Search';
 import React, { useEffect, useState } from 'react'
 
@@ -15,16 +14,6 @@ export default function SearchBar({ placeholder, className }: IVerticalListProps
     {id: 2, name: 'First_2 Last_2', email: 'person2@gmail.com'},
     {id: 3, name: 'First_3 Last_3', email: 'person3@gmail.com'}
   ]);
-
-  // useEffect(() => {
-  //   UserService.getUsers().then((res: IGetUsersResponse) => {
-  //     if(res.success && res.users) {
-  //       setPersons(res.users);
-  //     } else {
-  //       setPersons([]);
-  //     }
-  //   });
-  // }, []);
 
   return (
     <form className={`
