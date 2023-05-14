@@ -17,6 +17,7 @@ export interface IUserData {
   maritalStatus?: string;
   children?: IUserData[];
   emergencyContact?: string;
+  specialization?: string;
 }
 
 export interface IProps {
@@ -70,6 +71,8 @@ export default function UserForm({ user, isChild }: IProps) {
           <option value='single'>Single</option>
           <option value='married'>Married</option>
         </select>
+        <label>Specialization</label>
+        <input type='text' className='input_field' name='specialization' value={user?.specialization}/>
       </div>
       )}
     </form>
