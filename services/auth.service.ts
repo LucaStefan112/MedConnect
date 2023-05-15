@@ -13,13 +13,23 @@ export default class AuthService {
     }
   }
   
-  public static async checkAuth(token: string): Promise<IBasicResponse> {
+  public static async checkAuth(): Promise<IBasicResponse> {
     try {
-      const res = await axios.get(process.env.SERVER + ServerRoutes.CHECK_AUTH(token));
+      const res = await axios.get(process.env.SERVER + ServerRoutes.CHECK_AUTH, { withCredentials: true });
       return res.data;
     } catch (err) {
       console.log(err);
       return { success: false, message: "Error checking auth" };
+    }
+  }
+
+  public static async logout(): Promise<IBasicResponse> {
+    try {
+      const res = await axios.get(process.env.SERVER + ServerRoutes.LOGOUT);
+      return res.data;
+    } catch (err) {
+      console.log(err);
+      return { success: false, message: "Error logging out" };
     }
   }
 }
