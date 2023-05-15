@@ -1,42 +1,33 @@
-import React from 'react'
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import VerticalList, { IVerticalListProps } from './VerticalList';
 
-export interface IVerticalListProps {
-    className?: string;
-    list: {
-        title: string;
-        onClick?: () => void;
-        icons?: JSX.Element[];
-    }[];
-}
+describe('VerticalList', () => {
+  const mockList: IVerticalListProps['list'] = [
+    { title: 'Item 1', onClick: jest.fn() },
+    { title: 'Item 2', onClick: jest.fn() },
+  ];
 
-export default function VerticalList({ list, className }: IVerticalListProps) {
-    return (
-        <div className={`
-      w-full bg-blue-400 rounded-xl 
-      border-[1em] border-blue-400
-      overflow-y-scroll
-      ${className}`}
-        >
-            {
-                list.map((item, index) => (
-                    <div key={index}
-                        className='
-                flex flex-row justify-between 
-                mt-2 mb-2 p-4
-                bg-blue-100
-                rounded-xl'
-                    >
-                        <p className='text-lg text-blue-900 hover:cursor-pointer'
-                            onClick={() => item.onClick && item.onClick()}
-                        >
-                            {item.title}
-                        </p>
-                        {
-                            item.icons
-                        }
-                    </div>
-                ))
-            }
-        </div>
-    )
-}
+  it('renders the list items correctly', () => {
+    render(<VerticalList list={mockList} />);
+  
+    const item1 = screen.getByText('Item 1');
+    const item2 = screen.getByText('Item 2');
+  
+    expect(item1).toBeInTheDocument();
+    expect(item2).toBeInTheDocument();
+  });
+
+  it('calls the onClick function when an item is clicked', () => {
+    render(<VerticalList list={mockList} />);
+  
+    const item1 = screen.getByText('Item 1');
+    const item2 = screen.getByText('Item 2');
+  
+    item1.click();
+    item2.click();
+  
+    expect(mockList[0].onClick).toHaveBeenCalledTimes(1);
+    expect(mockList[1].onClick).toHaveBeenCalledTimes(1);
+  });
+});

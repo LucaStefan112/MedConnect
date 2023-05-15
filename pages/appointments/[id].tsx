@@ -1,4 +1,4 @@
-import UserService from '@/services/user.service';
+import UserService from '../../services/user.service';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react'
 

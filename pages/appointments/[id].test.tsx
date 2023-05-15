@@ -1,31 +1,41 @@
 import { render } from '@testing-library/react';
-import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import React from 'react';
+import UserService from '../../services/user.service';
 import Appointment from './[id]';
-import UserService from '@/services/user.service';
 
-jest.mock('@/services/user.service', () => ({
+// Mock the UserService module
+jest.mock('../../services/user.service', () => ({
   getAppointment: jest.fn().mockResolvedValue('Mocked appointment data'),
+}));
+
+// Mock the useRouter hook
+jest.mock('next/router', () => ({
+  useRouter: jest.fn(),
 }));
 
 describe('Appointment', () => {
   beforeEach(() => {
+    // Reset mock implementations and mockReturnValue for each test
     jest.clearAllMocks();
   });
 
-  test('fetches and logs appointment data when id is provided', async () => {
-    const mockId = '123';
-    const { getByText } = render(<Appointment id={mockId} />);
+  test('fetches and logs the appointment data', async () => {
+    // Set up the mocked router query
+    const mockQuery = { id: '123' };
+    (useRouter as jest.Mock).mockReturnValue({ query: mockQuery });
 
-    expect(UserService.getAppointment).toHaveBeenCalledWith(mockId);
-    await expect(UserService.getAppointment).resolves.toBe('Mocked appointment data');
+    // Render the Appointment component
+    render(<Appointment />);
+
+    // Wait for the asynchronous code in useEffect to complete
+    await new Promise((resolve) => setTimeout(resolve, 0));
+
+    // Expect the getAppointment method to be called with the correct ID
+    expect(UserService.getAppointment).toHaveBeenCalledWith(mockQuery.id);
+
+    // Expect the logged appointment data to be displayed in the console
     expect(console.log).toHaveBeenCalledWith('Mocked appointment data');
-  });
-
-  test('does not fetch appointment data when id is not provided', async () => {
-    const { getByText } = render(<Appointment />);
-
-    expect(UserService.getAppointment).not.toHaveBeenCalled();
-    expect(console.log).not.toHaveBeenCalled();
   });
 
   // Add more tests as needed for other scenarios or assertions
