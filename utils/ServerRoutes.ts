@@ -11,7 +11,11 @@ export class ServerRoutes {
   public static ADD_APPOINTMENT = '/appointments';
   public static GET_APPOINTMENT = (id: string) => `/appointments/${id}`;
   public static GET_APPOINTMENTS = '/appointments';
+  public static SET_APPOINTMENT_MESSAGE = (id: string) => `/appointments/${id}/message`;
   public static GET_DOCTORS_BY_SPECIALISATION = (specialisation: ISpecialisation) => `/doctors/specialisation/${specialisation._id}`;
   public static GET_DOCTOR_BUSY_INTERVALS = (doctor: IDoctor) => `/doctors/${doctor._id}/busy-intervals`;
   public static GET_ANALYSES = '/analyses';
+  public static GET_ANALYSIS = (id: string) => `/analyses/${id}`;
+  public static ADD_ANALYSIS = '/analyses';
+  public static DELETE_ANALYSIS = (id: string) => `/analyses/${id}`;
 }

@@ -16,10 +16,10 @@ export async function getServerSideProps({ params }: { params: { token: string }
 export default function AutshRedirect({ token }: { token: string }) {
   const router = useRouter();
   
-  const data = {
-  email: "lucastefantamas@gmail.com",
-  password: "LucaLuca1234"
-};
+    const data = {
+      email: "lucastefantamas@gmail.com",
+      password: "LucaLuca1234"
+    };
 
   useEffect(() => {
     AuthService.checkAuth().then((res: IBasicResponse) => {

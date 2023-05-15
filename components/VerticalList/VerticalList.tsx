@@ -4,7 +4,7 @@ export interface IVerticalListProps {
   className?: string;
   list: {
     title: string;
-    onClick?: () => void;
+    onClick: () => void;
     icons?: JSX.Element[];
   }[];
 }
@@ -27,13 +27,15 @@ export default function VerticalList({ list, className }: IVerticalListProps) {
                 rounded-xl'
               >
               <p className='text-lg text-blue-900 hover:cursor-pointer'
-                onClick={ () => item.onClick && item.onClick() }  
+                onClick={ () => item.onClick() }  
               >
                 { item.title }
               </p>
-              {
-                item.icons
-              }
+              <div>
+                {
+                  item.icons
+                }
+              </div>
             </div>
         ))
       }
