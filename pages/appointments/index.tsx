@@ -15,7 +15,6 @@ export default function Appointments() {
 
   useEffect(() => {
     UserService.getAppointments().then((res: IGetAppointmentsResponse) => {
-      console.log(res.appointments);
       if(res.success && res.appointments){
         setAppointments(res.appointments);
       } else {
@@ -26,31 +25,31 @@ export default function Appointments() {
 
   return (
     <div className='main_page'>
-      <div className='flex flex-row items-center justify-between w-full h-14'>
-        <Link href={ Routes.ADD_APPOINTMENT }>
+      <div className='flex flex-row items-center justify-between w-full h-14 mb-10'>
+        <p className='text-4xl mt-7 mb-7 text-blue-600 w-full'>
+          My Appointments
+        </p>
+        <Link href={ Routes.ADD_APPOINTMENT } className='w-32'>
           <Button className='main_button text-lg h-14'>
             New Appointment
           </Button>
         </Link>
       </div>
-      <p className='text-4xl mt-7 mb-7 text-blue-600 w-full'>
-        My Appointments
-      </p>
       
-      {/* { appointments.length && <VerticalList className='max-h-[30.5rem] hide_scroll'
+      { appointments.length && <VerticalList className='max-h-[30.5rem] hide_scroll'
         list= {
           appointments.map((appointment: IAppointment) => {
             return {
-              title:  appointment.specialisation.name + ' with ' + 
+              title:  appointment.specialisation + ' with ' + 
                       appointment.doctor.lastName + ' ' + appointment.doctor.firstName + ' on ' +
-                      DateTimeParser.parseDate(appointment.date) + ' at ' +
-                      DateTimeParser.parseTime(appointment.date),
-              onClick: () => appointment.id && router.push(Routes.APPOINTMENT(appointment.id)),
+                      DateTimeParser.parseDate(new Date(Date.parse(String(appointment.date)))) + ' at ' +
+                      DateTimeParser.parseTime(new Date(Date.parse(String(appointment.date)))),
+              onClick: () => router.push(Routes.APPOINTMENT(appointment._id)),
             }
           })
         }
       />
-      } */}
+      }
     </div>
   )
 }

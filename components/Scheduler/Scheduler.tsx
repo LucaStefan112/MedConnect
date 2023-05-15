@@ -98,7 +98,7 @@ export default function Scheduler() {
                     
                     setAppointment((appointment: IAppointment) => ({ 
                       ...appointment, 
-                      specialisation
+                      specialisation: specialisation.name
                     }));
 
                     DoctorService.getDoctors(specialisation).then((res: IGetDoctorsResponse) => {

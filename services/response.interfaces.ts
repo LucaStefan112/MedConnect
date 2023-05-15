@@ -44,3 +44,7 @@ export interface IGetUserDataResponse extends IBasicResponse {
 export interface IGetAnalysesResponse extends IBasicResponse {
   analyses?: IAnalysis[];
 }
+
+export interface IGetAnalysisResponse extends IBasicResponse {
+  path?: string;
+}
