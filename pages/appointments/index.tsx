@@ -64,6 +64,7 @@ export default function Appointments() {
         includeDates={ [...availableDays] }
         onChange={(date: Date) => {
           router.push(Routes.APPOINTMENTLIST);
+          console.log(date);
           // setAppointment((appointment: IAppointment) => ({
           //   ...appointment,
           //   date: new Date(date)

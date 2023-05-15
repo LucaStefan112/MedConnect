@@ -10,7 +10,7 @@ import Routes from '@/utils/Routes'
 export default function Home() {
   return (
     <div className='main_page justify-between'>
-      <div className='flex flex-row justify-center w-full'>
+      <div className='flex flex-row justify-center w-full pb-10'>
         <NewsPannel />
       </div>
       <div className='flex flex-row justify-between w-full items-center'>
@@ -19,7 +19,7 @@ export default function Home() {
           <p className='text-3xl mb-6'>
             Want to check out your schedule?
           </p>
-          <Link href={ Routes.SCHEDULELIST }>
+          <Link href={ Routes.SCHEDULE }>
             <Button className='main_button text-lg h-14 m-4'>
               My Schedule
             </Button>
