@@ -3,7 +3,6 @@ import PatientInfo from "../components/PatientInfo/PatientInfo";
 import { useRouter } from "next/router";
 import path from "path";
 
-
 class Patient {
   firstName: String;
   lastName: String;
@@ -39,7 +38,7 @@ export default function PatientInfoPage() {
   let nameArray = queryString.name?.toString().split("-");
   console.log(nameArray);
 
-  if(nameArray == undefined) {
+  if (nameArray == undefined) {
     nameArray = ["undefined", "undefined"];
   }
 

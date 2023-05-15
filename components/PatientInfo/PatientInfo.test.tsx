@@ -1,59 +1,67 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import PatientInfo from './PatientInfo';
+import { useRouter } from 'next/router';
+
+jest.mock('next/router', () => ({
+  push: jest.fn(),
+}));
 
 describe('PatientInfo', () => {
-  test('renders patient information correctly', () => {
-    const patient = {
-      firstName: 'John',
-      lastName: 'Doe',
-      birthDay: '1990-01-01',
-      sex: 'Male',
-      email: 'john@example.com',
-      phoneNumber: '1234567890',
-      address: '123 Main St',
-    };
+  const mockPatient = {
+    firstName: 'John',
+    lastName: 'Doe',
+    birthDay: '1990-01-01',
+    sex: 'Male',
+    email: 'john.doe@example.com',
+    phoneNumber: '1234567890',
+    address: '123 Main Street',
+  };
 
-    render(<PatientInfo patient={patient} />);
+  test('renders patient information', () => {
+    render(<PatientInfo patient={mockPatient} />);
 
-    const patientInfoHeading = screen.getByText("Patient's Information");
-    expect(patientInfoHeading).toBeInTheDocument();
-
-    const patientName = screen.getByText('First Name: John');
-    expect(patientName).toBeInTheDocument();
-
-    const patientRequestHeading = screen.getByText("Doctor's request");
-    expect(patientRequestHeading).toBeInTheDocument();
-
-    const requestContent = screen.getByText('Request: Provide detailed analyses.');
-    expect(requestContent).toBeInTheDocument();
+    expect(screen.getByText(`First Name: ${mockPatient.firstName}`)).toBeInTheDocument();
+    expect(screen.getByText(`Last Name: ${mockPatient.lastName}`)).toBeInTheDocument();
+    expect(screen.getByText(`Birthday: ${mockPatient.birthDay}`)).toBeInTheDocument();
+    expect(screen.getByText(`Sex: ${mockPatient.sex}`)).toBeInTheDocument();
+    expect(screen.getByText(`Contact: ${mockPatient.email} ${mockPatient.phoneNumber}`)).toBeInTheDocument();
+    expect(screen.getByText(`Address: ${mockPatient.address}`)).toBeInTheDocument();
   });
 
-  test('navigates to patient analysis page on button click', () => {
-    const mockRouterPush = jest.fn();
-    const patient = {
-      firstName: 'John',
-      lastName: 'Doe',
-      birthDay: '1990-01-01',
-      sex: 'Male',
-      email: 'john@example.com',
-      phoneNumber: '1234567890',
-      address: '123 Main St',
-    };
+  test('navigates to analyses page when "Go to patient\'s analysis" button is clicked', () => {
+    const pushMock = jest.fn();
+    (useRouter as jest.Mock).mockReturnValue({ push: pushMock });
 
-    jest.mock('next/router', () => ({
-      useRouter: () => ({
-        push: mockRouterPush,
-      }),
-    }));
+    render(<PatientInfo patient={mockPatient} />);
 
-    render(<PatientInfo patient={patient} />);
+    const goToAnalysesButton = screen.getByRole('button', { name: 'Go to patient\'s analysis' });
+    fireEvent.click(goToAnalysesButton);
 
-    const goToAnalysisButton = screen.getByText("Go to patient's analysis");
-    expect(goToAnalysisButton).toBeInTheDocument();
-
-    goToAnalysisButton.click();
-
-    expect(mockRouterPush).toHaveBeenCalledWith('/analyses');
+    expect(pushMock).toHaveBeenCalledWith('/analyses');
   });
+
+  test('displays the patient code', () => {
+    render(<PatientInfo patient={mockPatient} />);
+    const patientCodeElement = screen.getByText(/^Code: /);
+    expect(patientCodeElement).toBeInTheDocument();
+  });
+
+  test('displays doctor\'s request', () => {
+    render(<PatientInfo patient={mockPatient} />);
+    const requestElement = screen.getByText('Request: Provide detailed analyses.');
+    expect(requestElement).toBeInTheDocument();
+  });
+
+  test('renders without crashing', () => {
+    render(<PatientInfo patient={null} />);
+    expect(screen.queryByText('First Name:')).toBeNull();
+    expect(screen.queryByText('Last Name:')).toBeNull();
+    expect(screen.queryByText('Birthday:')).toBeNull();
+    expect(screen.queryByText('Sex:')).toBeNull();
+    expect(screen.queryByText('Contact:')).toBeNull();
+    expect(screen.queryByText('Address:')).toBeNull();
+  });
+
+  // Add more tests as needed for other scenarios or assertions
 });
