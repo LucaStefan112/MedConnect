@@ -17,10 +17,9 @@ const customJestConfig = {
   collectCoverage: true,
 
     collectCoverageFrom: [
-      './components/**/*.{js,jsx,ts,tsx}', // Include components folder
-      './pages/**/*.{js,jsx,ts,tsx}', // Include pages folder
-      './utils/**/*.{js,jsx,ts,tsx}', // Include utils folder
-      //'./services/**/*.{js,jsx,ts,tsx}', // Include services folder
+      './components/**/*.{js,jsx,ts,tsx}',
+      './pages/**/*.{js,jsx,ts,tsx}',
+      './utils/**/*.{js,jsx,ts,tsx}',
       '!./components/Scheduler/**/*.{js,jsx,ts,tsx}',
     ],
 
