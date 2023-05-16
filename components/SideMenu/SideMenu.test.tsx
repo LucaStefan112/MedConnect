@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 import SideMenu from './SideMenu';
 import { useRouter } from 'next/router';
 
-// mock Next.js router
 jest.mock('next/router', () => ({
   useRouter: () => ({
     pathname: '/',

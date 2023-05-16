@@ -13,6 +13,5 @@ describe('Home component', () => {
     render(<Home />);
     const buttonElement = screen.getByRole('button', { name: 'New Appointment' });
     fireEvent.click(buttonElement);
-    // Assert the correct route redirection here
   });
 });

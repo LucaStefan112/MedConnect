@@ -4,14 +4,12 @@ import AuthService from '../../services/auth.service';
 import { IBasicResponse } from '../../services/response.interfaces';
 
 
-// Mock the next/router module and provide a mock implementation for useRouter()
 jest.mock('next/router', () => ({
     useRouter: jest.fn().mockImplementation(() => ({
       replace: jest.fn(),
     })),
   }));
   
-  // Mock the AuthService module and provide a mock implementation for login() and checkAuth()
   jest.mock('../../services/auth.service', () => ({
     login: jest.fn().mockResolvedValue({ token: 'abc123' }),
     checkAuth: jest.fn().mockResolvedValue({ success: true }),

@@ -2,7 +2,6 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import SideMenuButton from './SideMenuButton';
 
-// Mock the next/router module
 jest.mock('next/router', () => ({
   useRouter: () => ({
     pathname: '/some/path',

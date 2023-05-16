@@ -11,7 +11,6 @@ describe('Appointments', () => {
   test('renders the component', () => {
     render(<Appointments />);
     
-    // Assert that the component renders without error
     expect(screen.getByText('My Appointments')).toBeInTheDocument();
   });
 
@@ -26,9 +25,7 @@ describe('Appointments', () => {
     const datePicker = screen.getByRole('datepicker');
     fireEvent.change(datePicker, { target: { value: addDays(new Date(), 1) } });
 
-    // Assert that the router is pushed to the appointment list route
     expect(mockPush).toHaveBeenCalledWith('/appointmentlist');
   });
 
-  // Add more tests as needed for other scenarios or assertions
 });

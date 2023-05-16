@@ -13,5 +13,4 @@ describe('AddAppointment', () => {
     expect(schedulerComponent).toBeInTheDocument();
   });
 
-  // Add more tests as needed for other scenarios or assertions
 });
