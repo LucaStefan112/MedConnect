@@ -1,38 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MedConnect
+This repository contains a front-end application built with Next.js, Tailwind CSS, and TypeScript, designed to streamline the process of scheduling medical appointments for patients. The app allows patients to easily schedule appointments with doctors, making the entire process faster and more efficient. Additionally, patients can upload their medical analyses, enabling doctors to review them prior to the appointment.
 
-## Getting Started
+**Features
+Appointment Scheduling: Patients can view the available time slots and schedule appointments with their preferred doctors. The app provides an intuitive interface for selecting dates, times, and doctors.
 
-First, run the development server:
+Medical Analysis Upload: Patients have the option to upload their medical analyses, such as lab results or imaging reports, to the app. This feature enables doctors to review the analyses prior to the appointment, leading to more informed discussions during the consultation.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+User-friendly Interface: The app is designed with a user-friendly interface, ensuring a smooth and intuitive experience for patients when scheduling appointments and uploading analyses.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Technologies Used
+The app is built using the following technologies:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Next.js: Next.js is a React framework that allows for server-side rendering, providing fast and optimized performance for the app.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Tailwind CSS: Tailwind CSS is a utility-first CSS framework that provides a wide range of pre-designed components and styles, enabling rapid and consistent UI development.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+TypeScript: TypeScript is a statically typed superset of JavaScript that brings type-checking capabilities to the application. It enhances code quality and improves developer productivity by catching errors at compile-time.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+API Calls: The app makes API calls to a server in order to retrieve and send data. The server handles the back-end logic and communicates with a database to manage appointments and analyses.
